@@ -1,8 +1,8 @@
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 let audioContext = new AudioContext();
 
-let audio1 = new Audio("startup.wav");
-let audio2 = new Audio("loop.wav");
+let audio1 = new Audio("audios/startup.wav");
+let audio2 = new Audio("audios/loop.wav");
 
 let source1 = audioContext.createMediaElementSource(audio1);
 let source2 = audioContext.createMediaElementSource(audio2);
@@ -35,7 +35,7 @@ document.addEventListener("visibilitychange", () => {
 
         async function kkk() {
           try {
-            const responses = await fetch("loop.wav");
+            const responses = await fetch("audios/loop.wav");
             buffer = await audioCtx.decodeAudioData(await responses.arrayBuffer());
           } catch (err) {
             console.error(`deu nao: ${err.message}`)
