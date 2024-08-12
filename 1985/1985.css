@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Fixedsys";
-    src: url(./FSEX302.ttf);
+    src: url(assets/fonts/Fixedsys.ttf);
 }
 
 :root {
@@ -13,7 +13,7 @@
     width: 640px;
     height: 350px;
     font-family: Fixedsys, monospace;
-    cursor: url("cursor_w1.png"), auto;
+    cursor: url("assets/cursor-win1.png"), auto;
     user-select: none;
 }
 
@@ -131,5 +131,5 @@
     height: 34px;
     border-top: 1px solid black;
     background-color: var(--green);
-    background-image: url("texture.png");
+    background-image: url("assets/texture.png");
 }
