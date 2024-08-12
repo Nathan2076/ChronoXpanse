@@ -26,18 +26,18 @@
         <div class="drive"><div>A</div  ><img src="assets/drive.png"></div>
         <div class="directory">A:WIN101</div>
       </div>
-      <div class="folder item" id="1980">1980</div>
-      <div class="item">ABC.TXT</div>
-      <div class="item">AUTOEXEC.BAT</div>
+      <div id="files">
+        <div class="folder item" id="1980">1980</div>
+      </div>
     </div>
     <div id="bottom"></div>
   </div>
   <script>
-    var names = [ "samanta", "monika", "erica" ];
-    localStorage.setItem("names", JSON.stringify(names));
-    var eita = JSON.parse(localStorage.getItem("names"));
+    var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.COM", "DISKCOMP.COM", "COMP.COM", "DATE.COM", "TIME.COM", "MODE.COM", "EDLIN.COM", "DEBUG.COM", "LINK.EXE", "BASIC.COM", "BASICA.COM", "ART.BAS", "SAMPLES.BAS", "MOTGAGE.BAS", "COLORBAR.BAS", "BUG.BAS", "CALENDAR.BAS", "MUSIC.BAS", "DONKEY.BAS", "BLUE.BAS", "HUMOR.BAS", "POP.BAS", "FORTY.BAS", "DANDY.BAS", "MARCH.BAS", "STARS.BAS", "HAT.BAS", "SCALES.BAS", "SAKURA.BAS", "CIRCLE.BAS", "PIECHART.BAS", "SPACE.BAS", "BALL.BAS", "COMM.BAS", "21.MAP" ];
+    localStorage.setItem("files", JSON.stringify(files));
+    var eita = JSON.parse(localStorage.getItem("files"));
     eita.forEach(element => {
-      console.log("temos " + element);
+      document.getElementById("files").insertAdjacentHTML("beforeend", `<div class='item'>${element}</div>`)
     });
     console.log("A:WIN101/");
     const ok = document.getElementsByClassName("item");
