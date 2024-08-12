@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="1985.css">
+</head>
+<body>
+  <div id="screen" oncontextmenu="return false;">
+    <div id="bar">
+      <img src="menu_wowow.png" id="menu" class="bar" />
+      <div id="barra">
+        <div id="bar-title">MS-DOS Executive</div>
+      </div>
+      <img src="minimize_wowow.png" id="nemsei" class="bar" />
+    </div>
+    <div id="baragain">
+      <div class="baritem">File</div>
+      <div class="baritem">View</div>
+      <div class="baritem">Special</div>
+    </div>
+    <div id="main">
+      <div id="directorybar">
+        <div class="drive"><div>A</div  ><img src="driver.png"></div>
+        <div class="directory">A:WIN101</div>
+      </div>
+      <div class="folder item" id="1980">1980</div>
+      <div class="item">ABC.TXT</div>
+      <div class="item">AUTOEXEC.BAT</div>
+    </div>
+    <div id="bottom"></div>
+  </div>
+  <script>
+    var names = [ "samanta", "monika", "erica" ];
+    localStorage.setItem("names", JSON.stringify(names));
+    var eita = JSON.parse(localStorage.getItem("names"));
+    eita.forEach(element => {
+      console.log("temos " + element);
+    });
+    console.log("A:WIN101/");
+    const ok = document.getElementsByClassName("item");
+    var bruh = Array.from(ok);
+    var lastSelected, lastSelectedClass;
+    bruh.forEach(element => {
+      element.onclick = event => {
+        if (event.detail === 1) {
+          if (lastSelected) lastSelected.setAttribute("class", lastSelectedClass);
+          lastSelected = element;
+          lastSelectedClass = element.getAttribute("class");
+          element.setAttribute("class", "selected " + lastSelectedClass);
+        } else if (event.detail === 2) {
+          if (element.innerHTML == "1980") {
+            console.log("ok");
+          } else {
+            alert("Cannot run " + element.innerHTML);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

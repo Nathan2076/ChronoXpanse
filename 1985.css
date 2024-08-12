@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "Fixedsys";
+    src: url(./FSEX302.ttf);
+}
+
+:root {
+    --blue: #5757FF;
+    --green: #57FF57;
+    --yellow: #FFFF57;
+}
+
+#screen {
+    width: 640px;
+    height: 350px;
+    font-family: Fixedsys, monospace;
+    cursor: url("cursor_w1.png"), auto;
+    user-select: none;
+}
+
+#bar {
+    display: flex;
+}
+
+#barra {
+    width: calc(100% - 14px);
+    height: 14px;
+    border: 1px solid black;
+    background-color: var(--blue);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.bar {
+    width: 13px;
+    height: 16px;
+}
+
+/* .yo {
+    width: 9px;
+    height: 2px;
+    margin: 2px;
+    background-color: black;
+} */
+
+#bar-title {
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 0.7em;
+    width: fit-content;
+}
+
+#baragain {
+    background-color: var(--yellow);
+    border-bottom: 1px solid black;
+    display: flex;
+    height: 14px;
+}
+
+.baritem {
+    margin: 0 8px;
+    line-height: 0.88em;
+}
+
+#main {
+    width: 100%;
+    height: calc(100% - 75px);
+    padding: 0 5px 9px;
+}
+
+#directorybar {
+    display: flex;
+}
+
+.drive {
+    width: 54px;
+    height: 15px;
+    margin: 2px 3px;
+    padding: 2px;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+.drive div {
+    width: 8px;
+    line-height: 0.85em;
+}
+
+.drive img {
+    width: 46px;
+}
+
+.directory {
+    width: 71px;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+.item {
+    width: 106px;
+    padding-left: 2px;
+    height: 14px;
+    line-height: 0.7em;
+}
+
+.folder {
+    font-weight: bold;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+    height: 13px;
+    animation: 250ms infinite cubic-bezier(1, 0, 0, 1) selected;
+}
+
+@keyframes selected {
+    from {
+        border-bottom: 1px dotted white;
+    }
+
+    to {
+        border-bottom: 1px solid black;
+    }
+}
+
+#bottom {
+    width: 100%;
+    height: 34px;
+    border-top: 1px solid black;
+    background-color: var(--green);
+    background-image: url("texture.png");
+}

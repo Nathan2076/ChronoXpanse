@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "IBM MDA";
+    src: url(./WebPlus_IBM_MDA.woff);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    background-image: url("ibm.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 58% 38%;
+}
+
+#light {
+    width: 1.15%;
+    position: absolute;
+    top: 46.55%;
+    left: 80.55%;
+}
+
+#button {
+    /*
+    80.5%
+    51%
+        */
+    right: 16.64%;
+    top: 52.8%;
+    z-index: 999;
+    position: absolute;
+    width: 2.73%;
+    /* height: 4.86%; */
+    transform: rotate(-90deg);
+    transition: transform ease-out .25s;
+    cursor: pointer;
+}
+
+#screen {
+    overflow: hidden;
+    color: #00FF00;
+    cursor: url("cursor-w1.png"), auto;
+    font-family: "IBM MDA";
+    font-size: 13px;
+    /*
+    1914x1410
+    */
+    /*
+    3840x2160
+    */
+    /*
+    49.84375
+    65.27777
+    */
+    /*
+    width left 11.74479166666
+    width right 26.74479166666
+    */
+    /*
+    height up 13.055555
+    height down 21.481481481
+    */
+    /*
+    28vh not-fs
+    13vh fs
+    */
+    width: 47.8vw;
+    height: 77vh;
+    position: relative;
+    top: 18vh;
+    margin-bottom: auto;
+    left: 24.5vw;
+    margin-right: auto;
+    transition: width 1s, height 1s, top 1s, left 1s;
+}
+
+.input {
+    display: flex;
+}
+
+#text {
+    line-height: 1.16;
+}
+
+.cli {
+    width: calc(49vw - 2em);
+    display: none;
+    background: none;
+    border: none;
+    caret-color: transparent;
+    color: #00FF00;
+    font-family: "IBM MDA";
+}
+
+#command:focus {
+    outline: none;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#cursor {
+    display: none;
+    position: relative;
+    z-index: 2;
+    background-color: #00FF00;
+    width: 9px;
+    height: 2px;
+    animation: 250ms infinite cubic-bezier(1, 0, 0, 1) blink;
+}
