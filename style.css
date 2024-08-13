@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    background-image: url("ibm.webp");
+    background-image: url("1980/assets/ibm.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 58% 38%;
@@ -18,7 +18,7 @@ body {
 #light {
     width: 1.15%;
     position: absolute;
-    top: 46.55%;
+    top: 47.3%;
     left: 80.55%;
 }
 
@@ -28,7 +28,7 @@ body {
     51%
         */
     right: 16.64%;
-    top: 52.8%;
+    top: 53.8%;
     z-index: 999;
     position: absolute;
     width: 2.73%;
@@ -41,7 +41,6 @@ body {
 #screen {
     overflow: hidden;
     color: #00FF00;
-    cursor: url("cursor-w1.png"), auto;
     font-family: "IBM MDA";
     font-size: 13px;
     /*

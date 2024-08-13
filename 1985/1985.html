@@ -32,33 +32,6 @@
     </div>
     <div id="bottom"></div>
   </div>
-  <script>
-    var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.COM", "DISKCOMP.COM", "COMP.COM", "DATE.COM", "TIME.COM", "MODE.COM", "EDLIN.COM", "DEBUG.COM", "LINK.EXE", "BASIC.COM", "BASICA.COM", "ART.BAS", "SAMPLES.BAS", "MOTGAGE.BAS", "COLORBAR.BAS", "BUG.BAS", "CALENDAR.BAS", "MUSIC.BAS", "DONKEY.BAS", "BLUE.BAS", "HUMOR.BAS", "POP.BAS", "FORTY.BAS", "DANDY.BAS", "MARCH.BAS", "STARS.BAS", "HAT.BAS", "SCALES.BAS", "SAKURA.BAS", "CIRCLE.BAS", "PIECHART.BAS", "SPACE.BAS", "BALL.BAS", "COMM.BAS", "21.MAP" ];
-    localStorage.setItem("files", JSON.stringify(files));
-    var eita = JSON.parse(localStorage.getItem("files"));
-    eita.forEach(element => {
-      document.getElementById("files").insertAdjacentHTML("beforeend", `<div class='item'>${element}</div>`)
-    });
-    console.log("A:WIN101/");
-    const ok = document.getElementsByClassName("item");
-    var bruh = Array.from(ok);
-    var lastSelected, lastSelectedClass;
-    bruh.forEach(element => {
-      element.onclick = event => {
-        if (event.detail === 1) {
-          if (lastSelected) lastSelected.setAttribute("class", lastSelectedClass);
-          lastSelected = element;
-          lastSelectedClass = element.getAttribute("class");
-          element.setAttribute("class", "selected " + lastSelectedClass);
-        } else if (event.detail === 2) {
-          if (element.innerHTML == "1980") {
-            console.log("ok");
-          } else {
-            alert("Cannot run " + element.innerHTML);
-          }
-        }
-      }
-    });
-  </script>
+  <script src="1985.js"></script>
 </body>
 </html>

@@ -15,8 +15,8 @@ audio1.onended = function() {
   audio2.play();
 }
 
-document.getElementById("screen").insertAdjacentHTML("beforebegin", '<img src="button.png" id="button">');
-document.getElementById("button").insertAdjacentHTML("beforebegin", '<img src="light.png" id="light">');
+document.getElementById("screen").insertAdjacentHTML("beforebegin", '<img src="1980/assets/button.png" id="button">');
+document.getElementById("button").insertAdjacentHTML("beforebegin", '<img src="1980/assets/light.png" id="light">');
 
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState == "visible" && document.getElementById('command')) {
