@@ -71,7 +71,6 @@ body {
     top: 18vh;
     margin-bottom: auto;
     left: 24.5vw;
-    margin-right: auto;
     transition: width 1s, height 1s, top 1s, left 1s;
 }
 
@@ -97,7 +96,7 @@ body {
     outline: none;
 }
 
-@keyframes blink {
+@keyframes fade {
     from {
         opacity: 1;
     }
@@ -114,5 +113,18 @@ body {
     background-color: #00FF00;
     width: 9px;
     height: 2px;
-    animation: 250ms infinite cubic-bezier(1, 0, 0, 1) blink;
+    animation: 250ms infinite cubic-bezier(1, 0, 0, 1) fade;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boot {
+    z-index: 5;
+    /* transition: width 1s, height 1s, top 1s, left 1s; */
 }

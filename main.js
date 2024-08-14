@@ -134,6 +134,11 @@ document.addEventListener("visibilitychange", () => {
       if (xhr.status === 200) {
           console.log('Dados enviados com sucesso!');
           response = xhr.responseText;
+          if (response == "booting") {
+            document.getElementById("screen").replaceChildren();
+            document.getElementById("screen").innerHTML = "<div id='loading'><img src='1985/assets/boot.png' id='boot' /></div>";
+            boot();
+          }
       } else {
           console.log('Ocorreu um erro ao enviar os dados.');
           }
@@ -168,7 +173,7 @@ document.addEventListener("visibilitychange", () => {
         setTimeout(function(){
           let text = document.getElementById("text");
           text.innerHTML = "The IBM Personal Computer DOS";
-          text.insertAdjacentHTML("afterend", "<div>Version 1.00 (C)Copyright IBM Corp 1981<br><br></div>");
+          text.insertAdjacentHTML("afterend", "<div>Version 1.00 (C)Copyright IBM Corp 1981<br><br>Desafio 1: use git para clonar o Windows<br><br></div>");
           text.removeAttribute("id");
           let yo = document.getElementById("input");
         yo.insertAdjacentHTML("afterbegin", "<div id='text'>A></div>");
@@ -203,3 +208,17 @@ document.addEventListener("visibilitychange", () => {
               // document.getElementById("screen").style.height = "77vh";
           }
       }
+
+      // function boot() {
+      //   setTimeout(() => {
+      //     document.getElementById("screen").style.width = "100vw";
+      //     document.getElementById("screen").style.height = "100vh";
+      //     document.getElementById("screen").style.top = "0";
+      //     document.getElementById("screen").style.left = "0";
+          
+      //     document.getElementById("boot").style.width = "100vw";
+      //     document.getElementById("boot").style.height = "100vh";
+      //     document.getElementById("boot").style.top = "0";
+      //     document.getElementById("boot").style.left = "0";
+      //   }, 2000);
+      // }

@@ -8,27 +8,27 @@ switch ($command[0]) {
     case "git":
         git($command);
         break;
-    case "timeline":
+    case "timeline": case "tl": case "linhadotempo": case "ldt": case "lt":
         echo "----[X]-----[ ]-----[ ]-----[ ]-----[ ]-----[ ]<br>";
         echo "&nbsp;&nbsp;&nbsp;1980&nbsp;&nbsp;&nbsp;&nbsp;1985&nbsp;&nbsp;&nbsp;&nbsp;1995&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000&nbsp;&nbsp;&nbsp;&nbsp;2010&nbsp;&nbsp;&nbsp;&nbsp;2024";
         break;
     default:
-        echo "Bad command or file name<br><br>";
+        echo "Comando ou nome de arquivo incorreto<br><br>";
 }
 
 function git($command) {
     if (count($command) > 1 && $command[1] == "clone") {
-        if (count($command) > 2 && substr($command[2], 0, 8) == "https://") {
-            exec("git clone " . format($command[2]), $output);
+        if (count($command) > 2 && $command[2] == "windows") {
+            echo("booting");
         } elseif (count($command) < 3) {
             echo "fatal: Você deve especificar um repositório para clonar.<br><br>";
-        } elseif (substr($command[2], 0, 8) != "https://") {
+        } elseif ($command[2] != "windows") {
             echo "fatal: repositório '" . format($command[2]) . "' não existe";
         }
     } elseif (count($command) < 2) {
         echo "uso: git &lt;comando&gt; [&lt;args&gt;]";
     } elseif ($command[1] != "clone") {
-        echo "git: '" . format($command[1]) . "' não é um comando git. Veja 'git --help'.";
+        echo "git: '" . format($command[1]) . "' não é um comando git.";
     }
 }
 
