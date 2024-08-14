@@ -59,11 +59,11 @@
 }
 
 .baritem {
-    margin: 0 8px;
+    padding: 0 8px;
     line-height: 0.88em;
 }
 
-#main {
+.main {
     width: 100%;
     height: calc(100% - 75px);
     padding: 0 5px 9px;
@@ -124,6 +124,18 @@
     to {
         border-bottom: 1px solid black;
     }
+}
+
+#notepad {
+    resize: none;
+    font-family: Fixedsys, monospace;
+    width: 624px;
+    border: none;
+    padding: 0 8px;
+}
+
+#notepad:focus {
+    outline: none;
 }
 
 #bottom {
