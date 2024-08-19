@@ -136,8 +136,9 @@ document.addEventListener("visibilitychange", () => {
           response = xhr.responseText;
           if (response == "booting") {
             document.getElementById("screen").replaceChildren();
-            document.getElementById("screen").innerHTML = "<div id='loading'><img src='1985/assets/boot.png' id='boot' /></div>";
-            boot();
+            document.getElementById("bg").style.backgroundImage = "url('1985/assets/boot.gif')";
+            // document.getElementById("screen").insertAdjacentHTML("afterend", "<img src='1985/assets/boot.png' id='boot' />");
+            // boot();
           }
       } else {
           console.log('Ocorreu um erro ao enviar os dados.');
@@ -211,14 +212,12 @@ document.addEventListener("visibilitychange", () => {
 
       // function boot() {
       //   setTimeout(() => {
-      //     document.getElementById("screen").style.width = "100vw";
-      //     document.getElementById("screen").style.height = "100vh";
-      //     document.getElementById("screen").style.top = "0";
-      //     document.getElementById("screen").style.left = "0";
-          
+      //     document.getElementById("boot").style.transform = "scale(2)";
+      //     document.getElementById("boot").style.top = "0px";
+      //     document.getElementById("boot").style.left = "0px";
       //     document.getElementById("boot").style.width = "100vw";
-      //     document.getElementById("boot").style.height = "100vh";
-      //     document.getElementById("boot").style.top = "0";
-      //     document.getElementById("boot").style.left = "0";
+      //     document.getElementById("bg").style.backgroundImage = "url('1980/assets/ibm.gif')";
+      //     document.getElementById("bg").style.backgroundPosition = "45% 37%";
+      //     document.getElementById("bg").style.backgroundSize = "220%";
       //   }, 2000);
       // }

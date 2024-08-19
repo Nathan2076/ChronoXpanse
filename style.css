@@ -10,9 +10,10 @@ body {
     padding: 0;
     background-color: black;
     background-image: url("1980/assets/ibm.webp");
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: 58% 38%;
+    transition: background-size 15s, background-position 10s;
 }
 
 #light {
@@ -116,15 +117,20 @@ body {
     animation: 250ms infinite cubic-bezier(1, 0, 0, 1) fade;
 }
 
-#loading {
+/* #loading {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 #boot {
-    z-index: 5;
-    /* transition: width 1s, height 1s, top 1s, left 1s; */
+    position: absolute;
+    width: 47.8vw;
+    top: 21.4vh;
+    left: 24.5vw;
+    /* transform-origin: center;
+    transition: transform 2s; */
+    /* transition: all 17s; */
 }
