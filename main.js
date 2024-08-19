@@ -134,6 +134,12 @@ document.addEventListener("visibilitychange", () => {
       if (xhr.status === 200) {
           console.log('Dados enviados com sucesso!');
           response = xhr.responseText;
+          if (response == "booting") {
+            document.getElementById("screen").replaceChildren();
+            document.getElementById("bg").style.backgroundImage = "url('1985/assets/boot.gif')";
+            // document.getElementById("screen").insertAdjacentHTML("afterend", "<img src='1985/assets/boot.png' id='boot' />");
+            // boot();
+          }
       } else {
           console.log('Ocorreu um erro ao enviar os dados.');
           }
@@ -168,7 +174,7 @@ document.addEventListener("visibilitychange", () => {
         setTimeout(function(){
           let text = document.getElementById("text");
           text.innerHTML = "The IBM Personal Computer DOS";
-          text.insertAdjacentHTML("afterend", "<div>Version 1.00 (C)Copyright IBM Corp 1981<br><br></div>");
+          text.insertAdjacentHTML("afterend", "<div>Version 1.00 (C)Copyright IBM Corp 1981<br><br>Desafio 1: use git para clonar o Windows<br><br></div>");
           text.removeAttribute("id");
           let yo = document.getElementById("input");
         yo.insertAdjacentHTML("afterbegin", "<div id='text'>A></div>");
@@ -203,3 +209,15 @@ document.addEventListener("visibilitychange", () => {
               // document.getElementById("screen").style.height = "77vh";
           }
       }
+
+      // function boot() {
+      //   setTimeout(() => {
+      //     document.getElementById("boot").style.transform = "scale(2)";
+      //     document.getElementById("boot").style.top = "0px";
+      //     document.getElementById("boot").style.left = "0px";
+      //     document.getElementById("boot").style.width = "100vw";
+      //     document.getElementById("bg").style.backgroundImage = "url('1980/assets/ibm.gif')";
+      //     document.getElementById("bg").style.backgroundPosition = "45% 37%";
+      //     document.getElementById("bg").style.backgroundSize = "220%";
+      //   }, 2000);
+      // }
