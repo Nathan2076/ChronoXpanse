@@ -63,6 +63,35 @@
     line-height: 0.88em;
 }
 
+#file {
+    display: none;
+    background-color: var(--yellow);
+    font-family: Fixedsys, monospace;
+    width: 112px;
+    height: 68px;
+    z-index: 99;
+    position: absolute;
+    color: black;
+    border: 1px solid black;
+    border-top: none;
+}
+
+#file li {
+    cursor: url("assets/cursor-win1.png"), auto;
+    height: 14px;
+    line-height: 0.88em;
+}
+
+.ui-state-active {
+    background-color: var(--blue) !important;
+}
+
+#file li div {
+    height: 14px;
+    padding: 0 16px;
+    border: none;
+}
+
 .main {
     width: 100%;
     height: calc(100% - 75px);
