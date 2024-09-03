@@ -1,3 +1,21 @@
+document.getElementById("filebar").addEventListener("mousedown", () => {
+  document.getElementById("filebar").style.backgroundColor = "var(--blue)";
+  document.getElementById("filebar").style.color = "white";
+  document.getElementById("file").style.display = "block";
+});
+
+document.getElementById("filebar").addEventListener("mouseup", () => {
+  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
+  document.getElementById("filebar").style.color = "black";
+  document.getElementById("file").style.display = "none";
+});
+
+document.getElementById("save").addEventListener("mouseup", () => {
+  if (document.getElementById("notepad"))
+    localStorage.setItem(document.getElementById("bar-title").innerHTML.substring(9), document.getElementById("notepad").value);
+  document.getElementById("file").style.display = "none";
+});
+
 var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.COM", "DISKCOMP.COM", "COMP.COM", "DATE.COM", "TIME.COM", "MODE.COM", "EDLIN.COM", "DEBUG.COM", "LINK.EXE", "BASIC.COM", "BASICA.COM", "ART.BAS", "SAMPLES.BAS" ];
     localStorage.setItem("files", JSON.stringify(files));
     var eita = JSON.parse(localStorage.getItem("files"));
@@ -52,5 +70,5 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
       document.getElementById("directorybar").remove();
       document.getElementById("files").remove();
       document.getElementById("main").remove();
-      document.getElementById("baragain").insertAdjacentHTML("afterend", "<textarea id='notepad' class='main' spellcheck='false' autofocus></textarea>");
+      document.getElementById("bottom").insertAdjacentHTML("beforebegin", "<textarea id='notepad' class='main' spellcheck='false' autofocus></textarea>");
     }

@@ -6,6 +6,14 @@
   <title>test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="1985.css">
+  <link rel="stylesheet" href="../include/jquery-ui-1.14.0/jquery-ui.css">
+  <script src="../include/jquery/jquery-3.7.1.min.js"></script>
+  <script src="../include/jquery-ui-1.14.0/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      $("#file").menu();
+    });
+  </script>
 </head>
 <body>
   <div id="screen" oncontextmenu="return false;">
@@ -17,10 +25,17 @@
       <img src="assets/minimize.png" id="nemsei" class="bar" />
     </div>
     <div id="baragain">
-      <div class="baritem">File</div>
+      <div class="baritem" id="filebar">File</div>
       <div class="baritem" id="view">View</div>
       <div class="baritem" id="special">Special</div>
     </div>
+    <ul id="file">
+      <li><div>New</div></li>
+      <li><div>Open...</div></li>
+      <li id="save"><div>Save</div></li>
+      <li><div>Save As...</div></li>
+      <li><div>Print</div></li>
+    </ul>
     <div id="main" class="main">
       <div id="directorybar">
         <div class="drive"><div>A</div  ><img src="assets/drive.png"></div>

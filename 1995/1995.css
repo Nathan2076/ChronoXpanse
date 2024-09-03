@@ -1,0 +1,39 @@
+@font-face{
+    font-family: Pxplus ;
+    src: url("assets/fonts/PxPlus_IBM_MDA.ttf");
+}
+
+body {
+    background-color: black;
+}
+
+p {
+    font-family: Pxplus ;
+    font-size: 30px;
+    color: #A6A6A6;
+
+    margin-left: 5px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#cursor {
+    background-color: #a8a8a8;
+    position: relative;
+    margin-left: 5px;
+    z-index: 2;
+    
+    
+    width: 15px;
+    height: 5px;
+
+    animation: 750ms infinite cubic-bezier(1, 0, 0, 1) fade;
+}
