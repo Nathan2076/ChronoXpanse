@@ -54,10 +54,7 @@ function Validate()
 
     if (isValid) {
         alert("Cadastro efetuado com sucesso!");
-        window.location.href = 'index.html';
+        window.location.href = '../index.html';
     }
 
-    //alert("Cadastro efetuado com sucesso!");
-    //return true;
-    //window.location.href = '.../index.html'
 }
