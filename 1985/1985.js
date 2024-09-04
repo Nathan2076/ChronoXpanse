@@ -1,3 +1,27 @@
+setTimeout(() => {
+  document.getElementById("boot").remove();
+}, 2000);
+
+document.getElementById("menu").addEventListener("mousedown", () => {
+  document.getElementById("filebar").style.backgroundColor = "var(--blue)";
+  document.getElementById("filebar").style.color = "white";
+  document.getElementById("file").style.display = "block";
+});
+
+document.getElementById("filebar").addEventListener("mouseup", () => {
+  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
+  document.getElementById("filebar").style.color = "black";
+  document.getElementById("file").style.display = "none";
+});
+
+document.getElementById("save").addEventListener("mouseup", () => {
+  if (document.getElementById("notepad"))
+    localStorage.setItem(document.getElementById("bar-title").innerHTML.substring(9), document.getElementById("notepad").value);
+  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
+  document.getElementById("filebar").style.color = "black";
+  document.getElementById("file").style.display = "none";
+});
+
 document.getElementById("filebar").addEventListener("mousedown", () => {
   document.getElementById("filebar").style.backgroundColor = "var(--blue)";
   document.getElementById("filebar").style.color = "white";
@@ -13,6 +37,8 @@ document.getElementById("filebar").addEventListener("mouseup", () => {
 document.getElementById("save").addEventListener("mouseup", () => {
   if (document.getElementById("notepad"))
     localStorage.setItem(document.getElementById("bar-title").innerHTML.substring(9), document.getElementById("notepad").value);
+  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
+  document.getElementById("filebar").style.color = "black";
   document.getElementById("file").style.display = "none";
 });
 
