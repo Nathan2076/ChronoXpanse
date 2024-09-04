@@ -123,3 +123,7 @@ a:hover{
 header {
     padding: 20px;
 }
+
+.toggle-password {
+    cursor: pointer;
+}
