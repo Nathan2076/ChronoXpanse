@@ -30,11 +30,13 @@ body {
 .maintitle h1 {
     margin: 0;
     text-align: center;
+    cursor: default;
 }
 
 .subtitle {
     text-align: center;
     margin-bottom: 20px;
+    cursor: default;
 }
 
 .form-group {
@@ -87,12 +89,12 @@ body {
     margin: 10px 0;
 }
 
-.announce{
+.announce {
     color: #ffd0008c;
     font-size: small;
 }
 
-input::placeholder{
+input::placeholder {
     color: #ffd00034;
 }
 
@@ -106,12 +108,12 @@ input::placeholder{
     font-size: 40px;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-a:hover{
+a:hover {
     color: #FFD100;
 }
 

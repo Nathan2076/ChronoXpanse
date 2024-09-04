@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const togglePassword = document.getElementById('togglePassword');
     const password = document.getElementById('password');
 
     const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
     const passwordConfirm = document.getElementById('passwordconfirm');
-    
-    togglePassword.addEventListener('click', function() {
+
+    togglePassword.addEventListener('click', function () {
 
         const type = password.type === 'password' ? 'text' : 'password';
         password.type = type;
@@ -13,22 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
         this.textContent = type === 'password' ? '👁️' : '🙈';
     });
 
-    togglePasswordConfirm.addEventListener('click', function() {
+    togglePasswordConfirm.addEventListener('click', function () {
         const type = passwordConfirm.type === 'password' ? 'text' : 'password';
         passwordConfirm.type = type;
         this.textContent = type === 'password' ? '👁️' : '🙈';
     });
 });
 
-function Validate()
-{
-    let name            = document.getElementById('name').value;
-    let email           = document.getElementById('email').value;
-    let password        = document.getElementById('password').value;
+function Validate() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
     let passwordconfirm = document.getElementById('passwordconfirm').value;
 
-    if (!name || !email || !password || !passwordconfirm)
-    {
+    if (!name || !email || !password || !passwordconfirm) {
         alert("Preencha todos os campos obrigatórios!");
         return false;
     }
@@ -53,7 +51,7 @@ function Validate()
     var isValid = true
 
     if (isValid) {
-        alert("Cadastro efetuado com sucesso!");
+        alert("Cadastro finalizado com sucesso!");
         window.location.href = '../index.html';
     }
 
