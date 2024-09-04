@@ -50,6 +50,14 @@ function Validate()
         return false;
     }
 
-    alert("Cadastro efetuado com sucesso!");
-    return true;
+    var isValid = true
+
+    if (isValid) {
+        alert("Cadastro efetuado com sucesso!");
+        window.location.href = 'index.html';
+    }
+
+    //alert("Cadastro efetuado com sucesso!");
+    //return true;
+    //window.location.href = '.../index.html'
 }
