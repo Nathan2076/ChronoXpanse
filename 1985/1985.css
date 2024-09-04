@@ -70,7 +70,11 @@
     line-height: 0.88em;
 }
 
-#file {
+#menu-menu {
+    height: 100px;
+}
+
+ul.menu {
     display: none;
     background-color: var(--yellow);
     font-family: Fixedsys, monospace;
@@ -79,11 +83,11 @@
     z-index: 99;
     position: absolute;
     color: black;
-    border: 1px solid black;
+    border: 1px solid black !important;
     border-top: none;
 }
 
-#file li {
+ul.menu li {
     cursor: url("assets/cursor-win1.png"), auto;
     height: 14px;
     line-height: 0.88em;
@@ -93,7 +97,7 @@
     background-color: var(--blue) !important;
 }
 
-#file li div {
+ul.menu li div {
     height: 14px;
     padding: 0 16px;
     border: none;

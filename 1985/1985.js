@@ -3,9 +3,15 @@ setTimeout(() => {
 }, 2000);
 
 document.getElementById("menu").addEventListener("mousedown", () => {
-  document.getElementById("filebar").style.backgroundColor = "var(--blue)";
-  document.getElementById("filebar").style.color = "white";
-  document.getElementById("file").style.display = "block";
+  document.getElementById("menu").style.backgroundColor = "var(--blue)";
+  document.getElementById("menu").style.color = "white";
+  document.getElementById("menu-menu").style.display = "block";
+});
+
+document.getElementById("menu").addEventListener("mouseup", () => {
+  document.getElementById("menu").style.backgroundColor = "var(--yellow)";
+  document.getElementById("menu").style.color = "black";
+  document.getElementById("menu-menu").style.display = "none";
 });
 
 document.getElementById("filebar").addEventListener("mouseup", () => {
