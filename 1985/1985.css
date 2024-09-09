@@ -22,6 +22,7 @@
     font-family: Fixedsys, monospace;
     cursor: url("assets/cursor-win1.png"), auto;
     user-select: none;
+    background-color: black;
 }
 
 #bar {
@@ -84,7 +85,7 @@ ul.menu {
     position: absolute;
     color: black;
     border: 1px solid black !important;
-    border-top: none;
+    border-top: none !important;
 }
 
 ul.menu li {
@@ -95,18 +96,20 @@ ul.menu li {
 
 .ui-state-active {
     background-color: var(--blue) !important;
+    border: none !important;
 }
 
 ul.menu li div {
     height: 14px;
-    padding: 0 16px;
     border: none;
+    padding: 0 16px !important;
 }
 
 .main {
     width: 100%;
     height: calc(100% - 75px);
     padding: 0 5px 9px;
+    background-color: white;
 }
 
 #directorybar {
@@ -172,6 +175,9 @@ ul.menu li div {
     width: 624px;
     border: none;
     padding: 0 8px;
+    margin: 0;
+    height: 284px;
+    position: absolute;
 }
 
 #notepad:focus {

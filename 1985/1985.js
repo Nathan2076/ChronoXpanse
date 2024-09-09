@@ -1,16 +1,16 @@
+var file = null;
+
 setTimeout(() => {
   document.getElementById("boot").remove();
 }, 2000);
 
 document.getElementById("menu").addEventListener("mousedown", () => {
-  document.getElementById("menu").style.backgroundColor = "var(--blue)";
-  document.getElementById("menu").style.color = "white";
+  document.getElementById("menu").setAttribute("src", "assets/menu-selected.png");
   document.getElementById("menu-menu").style.display = "block";
 });
 
 document.getElementById("menu").addEventListener("mouseup", () => {
-  document.getElementById("menu").style.backgroundColor = "var(--yellow)";
-  document.getElementById("menu").style.color = "black";
+  document.getElementById("menu").setAttribute("src", "assets/menu.png");
   document.getElementById("menu-menu").style.display = "none";
 });
 
@@ -20,12 +20,8 @@ document.getElementById("filebar").addEventListener("mouseup", () => {
   document.getElementById("file").style.display = "none";
 });
 
-document.getElementById("save").addEventListener("mouseup", () => {
-  if (document.getElementById("notepad"))
-    localStorage.setItem(document.getElementById("bar-title").innerHTML.substring(9), document.getElementById("notepad").value);
-  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
-  document.getElementById("filebar").style.color = "black";
-  document.getElementById("file").style.display = "none";
+document.getElementById("close").addEventListener("mouseup", () => {
+  close();
 });
 
 document.getElementById("filebar").addEventListener("mousedown", () => {
@@ -42,7 +38,7 @@ document.getElementById("filebar").addEventListener("mouseup", () => {
 
 document.getElementById("save").addEventListener("mouseup", () => {
   if (document.getElementById("notepad"))
-    localStorage.setItem(document.getElementById("bar-title").innerHTML.substring(9), document.getElementById("notepad").value);
+    localStorage.setItem(file, document.getElementById("notepad").value);
   document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
   document.getElementById("filebar").style.color = "black";
   document.getElementById("file").style.display = "none";
@@ -89,18 +85,30 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
           lastSelectedClass = element.getAttribute("class");
           element.setAttribute("class", "selected " + lastSelectedClass);
         } else if (event.detail === 2) {
-          openFile(element.innerHTML);
+          file = element.innerHTML
+          openFile();
         }
       }
       });
     }
   
-    function openFile(file) {
+    function openFile() {
       document.getElementById("bar-title").innerHTML = "Notepad - " + file;
       document.getElementById("view").innerHTML = "Edit";
       document.getElementById("special").innerHTML = "Search";
-      document.getElementById("directorybar").remove();
-      document.getElementById("files").remove();
-      document.getElementById("main").remove();
-      document.getElementById("bottom").insertAdjacentHTML("beforebegin", "<textarea id='notepad' class='main' spellcheck='false' autofocus></textarea>");
+      document.getElementById("main").insertAdjacentHTML("afterbegin", "<textarea id='notepad' class='main' spellcheck='false' autofocus></textarea>");
+      console.log(localStorage.getItem(file));
+      document.getElementById("notepad").value = localStorage.getItem(file);
+    }
+
+    function close() {
+      if (document.getElementById("bar-title").innerHTML.includes("Notepad")) {
+        document.getElementById("menu").setAttribute("src", "assets/menu.png");
+        document.getElementById("menu-menu").style.display = "none";
+        document.getElementById("notepad").remove();
+        document.getElementById("bar-title").innerHTML = "MS-DOS Executive";
+      } else if (document.getElementById("bar-title").innerHTML == "MS-DOS Executive") {
+        document.getElementById("screen").replaceChildren();
+        document.getElementById("screen").insertAdjacentHTML();
+      }
     }
