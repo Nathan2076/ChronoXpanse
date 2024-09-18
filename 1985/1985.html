@@ -11,6 +11,7 @@
   <script src="../include/jquery-ui-1.14.0/jquery-ui.js"></script>
   <script>
     $(function() {
+      $("#menu-menu").menu();
       $("#file").menu();
     });
   </script>
@@ -19,18 +20,27 @@
   <div id="screen" oncontextmenu="return false;">
     <img src="assets/boot.png" id="boot">
     <div id="bar">
-      <img src="assets/menu.png" id="menu" class="bar" />
+      <img src="assets/menu.png" draggable="false" id="menu" class="bar" />
       <div id="barra">
         <div id="bar-title">MS-DOS Executive</div>
       </div>
       <img src="assets/minimize.png" id="nemsei" class="bar" />
     </div>
+    <ul id="menu-menu" class="menu">
+      <li><div>Size</div></li>
+      <li><div>Move</div></li>
+      <li><div>Icon</div></li>
+      <li><div>Zoom</div></li>
+      <li id="close"><div>Close</div></li>
+      <li><hr /></li>
+      <li><div>About...</div></li>
+    </ul>
     <div id="baragain">
       <div class="baritem" id="filebar">File</div>
       <div class="baritem" id="view">View</div>
       <div class="baritem" id="special">Special</div>
     </div>
-    <ul id="file">
+    <ul id="file" class="menu">
       <li><div>New</div></li>
       <li><div>Open...</div></li>
       <li id="save"><div>Save</div></li>

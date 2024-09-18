@@ -22,6 +22,7 @@
     font-family: Fixedsys, monospace;
     cursor: url("assets/cursor-win1.png"), auto;
     user-select: none;
+    background-color: black;
 }
 
 #bar {
@@ -70,7 +71,11 @@
     line-height: 0.88em;
 }
 
-#file {
+#menu-menu {
+    height: 100px;
+}
+
+ul.menu {
     display: none;
     background-color: var(--yellow);
     font-family: Fixedsys, monospace;
@@ -79,11 +84,11 @@
     z-index: 99;
     position: absolute;
     color: black;
-    border: 1px solid black;
-    border-top: none;
+    border: 1px solid black !important;
+    border-top: none !important;
 }
 
-#file li {
+ul.menu li {
     cursor: url("assets/cursor-win1.png"), auto;
     height: 14px;
     line-height: 0.88em;
@@ -91,18 +96,20 @@
 
 .ui-state-active {
     background-color: var(--blue) !important;
+    border: none !important;
 }
 
-#file li div {
+ul.menu li div {
     height: 14px;
-    padding: 0 16px;
     border: none;
+    padding: 0 16px !important;
 }
 
 .main {
     width: 100%;
     height: calc(100% - 75px);
     padding: 0 5px 9px;
+    background-color: white;
 }
 
 #directorybar {
@@ -168,6 +175,10 @@
     width: 624px;
     border: none;
     padding: 0 8px;
+    margin: 0;
+    height: 284px;
+    position: absolute;
+    cursor: url("assets/caret.png"), text;
 }
 
 #notepad:focus {
@@ -180,4 +191,5 @@
     border-top: 1px solid black;
     background-color: var(--green);
     background-image: url("assets/texture.png");
+    cursor: url("assets/taskbar.png"), auto;
 }
