@@ -109,6 +109,68 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
         document.getElementById("bar-title").innerHTML = "MS-DOS Executive";
       } else if (document.getElementById("bar-title").innerHTML == "MS-DOS Executive") {
         document.getElementById("screen").replaceChildren();
-        document.getElementById("screen").insertAdjacentHTML();
+        document.getElementById("screen").setAttribute("class", "terminal");
+        document.getElementById("screen").insertAdjacentHTML("beforeend", '<div id="input" class="input"><div id="text">A></div><form id="forms"><input type="text" id="command" class="cli"/></form></div><div id="response"></div><div id="cursor"></div>');
+        document.getElementById("command").focus();
+        foo();
       }
     }
+
+
+    function foo() {
+      let text = document.getElementById("text");
+      let form = document.getElementById("forms");
+      let input = document.getElementById("input");
+      let cursor = document.getElementById("cursor");
+      let responseDiv = document.getElementById("response");
+      var position = 17.2;
+      cursor.style.left = position + "px";
+      let commandInput = document.getElementById('command');
+      var inputLengthPast = 0;
+      var inputLengthNow = 0;
+      commandInput.style.display = "block";
+      commandInput.focus();
+      commandInput.addEventListener("input", function() {
+        inputLengthNow = commandInput.value.length;
+
+        if (inputLengthNow > inputLengthPast) {
+          position += 8.6 * (inputLengthNow - inputLengthPast);
+        }
+        else if (inputLengthNow < inputLengthPast) {
+          position -= 8.6 * (inputLengthPast - inputLengthNow);
+        }
+
+        cursor.style.left = position + "px";
+        inputLengthPast = inputLengthNow;
+      });
+      document.getElementById('forms').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let command = document.getElementById("command").value;
+      var xhr = new XMLHttpRequest();
+      var response = "";
+    xhr.open('POST', '../idk.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send("command=" + command + "&level=1985");
+    xhr.onload = function() {
+    if (xhr.status === 200) {
+        console.log('Dados enviados com sucesso!');
+        response = xhr.responseText;
+    } else {
+        console.log('Ocorreu um erro ao enviar os dados.');
+        }
+    responseDiv.innerHTML = response;
+    input.removeAttribute("id");
+    form.setAttribute("inert", "");
+    form.removeAttribute("id");
+    commandInput.removeAttribute("id");
+    text.removeAttribute("id");
+    responseDiv.insertAdjacentHTML("afterend", '<div id="input" class="input"><div id="text"></div><form id="forms"><input type="text" id="command" class="cli" /></form></div>');
+    responseDiv.removeAttribute("id");
+    input = document.getElementById("input");
+    input.insertAdjacentHTML("afterend", '<div id="response"></div>');
+    text = document.getElementById("text");
+    text.textContent = "A>";
+    foo();
+    };
+    });
+  }

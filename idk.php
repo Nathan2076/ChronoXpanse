@@ -1,22 +1,22 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] != "POST") return;
 
-$line = $_POST['command'];
+$line    = $_POST["command"];
 $command = explode(" ", $line);
+$level   = $_POST["level"];
 
 switch ($command[0]) {
     case "git":
-        git($command);
+        git($command, $level);
         break;
     case "timeline": case "tl": case "linhadotempo": case "ldt": case "lt":
-        echo "----[X]-----[ ]-----[ ]-----[ ]-----[ ]-----[ ]<br>";
-        echo "&nbsp;&nbsp;&nbsp;1980&nbsp;&nbsp;&nbsp;&nbsp;1985&nbsp;&nbsp;&nbsp;&nbsp;1995&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000&nbsp;&nbsp;&nbsp;&nbsp;2010&nbsp;&nbsp;&nbsp;&nbsp;2024";
+        printTimeline($level);
         break;
     default:
         echo "Comando ou nome de arquivo incorreto<br><br>";
 }
 
-function git($command) {
+function git($command, $level) {
     if (count($command) > 1 && $command[1] == "clone") {
         if (count($command) > 2 && $command[2] == "windows") {
             echo("booting");
@@ -25,10 +25,22 @@ function git($command) {
         } elseif ($command[2] != "windows") {
             echo "fatal: repositório '" . format($command[2]) . "' não existe";
         }
+    } elseif (count($command) > 1 && $command[1] == "add") {
+        if ()
     } elseif (count($command) < 2) {
         echo "uso: git &lt;comando&gt; [&lt;args&gt;]";
     } elseif ($command[1] != "clone") {
         echo "git: '" . format($command[1]) . "' não é um comando git.";
+    }
+}
+
+function printTimeline($level) {
+    if ($level != 1985) {
+        echo "----[X]-----[ ]-----[ ]-----[ ]-----[ ]-----[ ]<br>";
+        echo "&nbsp;&nbsp;&nbsp;1980&nbsp;&nbsp;&nbsp;&nbsp;1985&nbsp;&nbsp;&nbsp;&nbsp;1995&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000&nbsp;&nbsp;&nbsp;&nbsp;2010&nbsp;&nbsp;&nbsp;&nbsp;2024";
+    } else {
+        echo "----[X]-----[X]-----[ ]-----[ ]-----[ ]-----[ ]<br>";
+        echo "&nbsp;&nbsp;&nbsp;1980&nbsp;&nbsp;&nbsp;&nbsp;1985&nbsp;&nbsp;&nbsp;&nbsp;1995&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000&nbsp;&nbsp;&nbsp;&nbsp;2010&nbsp;&nbsp;&nbsp;&nbsp;2024";
     }
 }
 

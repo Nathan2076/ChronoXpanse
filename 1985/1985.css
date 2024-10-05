@@ -3,6 +3,11 @@
     src: url(assets/fonts/Fixedsys.ttf);
 }
 
+@font-face {
+    font-family: "IBM MDA";
+    src: url(../1980/assets/fonts/IBM-MDA.woff);
+}
+
 :root {
     --blue: #5757FF;
     --green: #57FF57;
@@ -23,6 +28,12 @@
     cursor: url("assets/cursor-win1.png"), auto;
     user-select: none;
     background-color: black;
+}
+
+#screen.terminal {
+    color: #00FF00;
+    font-family: "IBM MDA";
+    font-size: 13px;
 }
 
 #bar {
@@ -192,4 +203,45 @@ ul.menu li div {
     background-color: var(--green);
     background-image: url("assets/texture.png");
     cursor: url("assets/taskbar.png"), auto;
+}
+
+
+.input {
+    display: flex;
+}
+
+#text {
+    line-height: 1.16;
+}
+
+.cli {
+    width: calc(49vw - 2em);
+    background: none;
+    border: none;
+    caret-color: transparent;
+    color: #00FF00;
+    font-family: "IBM MDA";
+}
+
+#command:focus {
+    outline: none;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#cursor {
+    position: relative;
+    z-index: 2;
+    background-color: #00FF00;
+    width: 9px;
+    height: 2px;
+    animation: 250ms infinite cubic-bezier(1, 0, 0, 1) fade;
 }
