@@ -12,6 +12,7 @@
     --blue: #5757FF;
     --green: #57FF57;
     --yellow: #FFFF57;
+    --gray: #C8C8C8;
 }
 
 #boot {
@@ -31,7 +32,7 @@
 }
 
 #screen.terminal {
-    color: #00FF00;
+    color: var(--gray);
     font-family: "IBM MDA";
     font-size: 13px;
 }
@@ -219,7 +220,7 @@ ul.menu li div {
     background: none;
     border: none;
     caret-color: transparent;
-    color: #00FF00;
+    color: var(--gray);
     font-family: "IBM MDA";
 }
 
@@ -240,7 +241,7 @@ ul.menu li div {
 #cursor {
     position: relative;
     z-index: 2;
-    background-color: #00FF00;
+    background-color: var(--gray);
     width: 9px;
     height: 2px;
     animation: 250ms infinite cubic-bezier(1, 0, 0, 1) fade;
