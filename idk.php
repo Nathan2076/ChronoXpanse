@@ -4,10 +4,11 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") return;
 $line    = $_POST["command"];
 $command = explode(" ", $line);
 $level   = $_POST["level"];
+$gitadd  = false;
 
 switch ($command[0]) {
     case "git":
-        git($command, $level);
+        git($command, $level, $gitadd);
         break;
     case "timeline": case "tl": case "linhadotempo": case "ldt": case "lt":
         printTimeline($level);
@@ -16,7 +17,7 @@ switch ($command[0]) {
         echo "Comando ou nome de arquivo incorreto<br><br>";
 }
 
-function git($command, $level) {
+function git($command, $level, $gitadd) {
     if (count($command) > 1 && $command[1] == "clone") {
         if (count($command) > 2 && $command[2] == "windows") {
             echo("booting");
@@ -25,8 +26,10 @@ function git($command, $level) {
         } elseif ($command[2] != "windows") {
             echo "fatal: repositório '" . format($command[2]) . "' não existe";
         }
-    } elseif (count($command) > 1 && $command[1] == "add") {
-        if ()
+    } elseif (count($command) > 1 && $command[1] == "add" && $level == 1985) {
+        $gitadd = true;
+    } elseif (count($command) > 1 && $command[1] == "commit" && $gitadd && $level == 1985) {
+        echo "[main f3b3714] "
     } elseif (count($command) < 2) {
         echo "uso: git &lt;comando&gt; [&lt;args&gt;]";
     } elseif ($command[1] != "clone") {
