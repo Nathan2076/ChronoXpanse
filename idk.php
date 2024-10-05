@@ -52,6 +52,9 @@ function git($command) {
             echo "Abortando commit devido a uma mensagem de commit vazia.";
         }
     }
+    elseif (count($command) > 1 && $command[1] == "push" && $level == 1985) {
+        echo "";
+    }
     elseif (count($command) < 2) {
         echo "uso: git &lt;comando&gt; [&lt;args&gt;]";
     }
