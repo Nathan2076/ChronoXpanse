@@ -15,6 +15,7 @@ switch ($command[0]) {
         break;
     default:
         echo "Comando ou nome de arquivo incorreto<br><br>";
+        break;
 }
 
 function git($command) {
