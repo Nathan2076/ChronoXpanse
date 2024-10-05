@@ -53,7 +53,10 @@ function git($command) {
         }
     }
     elseif (count($command) > 1 && $command[1] == "push" && $level == 1985) {
-        echo "";
+        echo "Para https://github.com/User/ChronoXpanse.git<br>&nbsp;<span class='error'>! [rejeitado]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main -> main (obter primeiro)<br><span class='error'>erro: falha ao enviar algumas refs para 'https://github.com/User/ChronoXpanse.git'<br><span class='warning'>dica: Atualizações rejeitadas por estarem desatualizadas do repositório remoto.</span><br><span class='warning'>dica: Isso é normalmente causado por conflitos entre arquivos locais e remotos.</span><br><span class='warning'>dica: Use 'git pull' para importar os arquivos que faltam e digite</span><br><span class='warning'>dica: 'win' para entrar no Windows e editá-los.</span>";
+    }
+    elseif (count($command) > 1 && $command[1] == "pull" && $level == 1985) {
+        echo "remoto: Enumerando objetos: 1, concluído.";
     }
     elseif (count($command) < 2) {
         echo "uso: git &lt;comando&gt; [&lt;args&gt;]";

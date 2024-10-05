@@ -9,10 +9,12 @@
 }
 
 :root {
-    --blue: #5757FF;
-    --green: #57FF57;
-    --yellow: #FFFF57;
+    --blue: #5555FF;
+    --green: #55FF55;
+    --yellow: #FFFF55;
     --gray: #C8C8C8;
+    --red: #FF5555;
+    --brown: #AA5500;
 }
 
 #boot {
@@ -245,4 +247,12 @@ ul.menu li div {
     width: 9px;
     height: 2px;
     animation: 250ms infinite cubic-bezier(1, 0, 0, 1) fade;
+}
+
+.error {
+    color: var(--red);
+}
+
+.warning {
+    color: var(--brown);
 }
