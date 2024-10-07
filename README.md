@@ -1,4 +1,4 @@
-lklklkiçl# ChronoXpanse
+# ChronoXpanse
 
 ## JavaScript
 
