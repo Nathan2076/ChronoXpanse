@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="cadlog.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../cadlog/cadlog.css">
     <script src="log.js"></script>
 </head>
 
 <body>
     <header>
-        <img alt="Logo" class="logo" src="logo.png">
+        <img alt="Logo" class="logo" src="../cadlog/logo.png">
         <div class="info">
             <a href=".../index.html">início:)</a>
         </div>
