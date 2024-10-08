@@ -129,14 +129,14 @@ document.addEventListener("visibilitychange", () => {
         var response = "";
       xhr.open('POST', 'idk.php');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.send('command=' + command);
+      xhr.send('command=' + command + "&level=1980");
       xhr.onload = function() {
       if (xhr.status === 200) {
           console.log('Dados enviados com sucesso!');
           response = xhr.responseText;
           if (response == "booting") {
-            document.getElementById("screen").replaceChildren();
-            document.getElementById("bg").style.backgroundImage = "url('1985/assets/boot.gif')";
+            document.getElementById("bg").replaceChildren();
+            document.getElementById("bg").insertAdjacentHTML("beforeend", "<video id='video' src='1985/assets/vamo.mp4'></video>");
             // document.getElementById("screen").insertAdjacentHTML("afterend", "<img src='1985/assets/boot.png' id='boot' />");
             // boot();
           }
