@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label for="password">Senha</label>
                     <input type="password" id="password" name="password" autocomplete="on">
-                    <i id="togglePassword" class="toggle-password">👁️</i>
+                    <i id="togglePassword" class="toggle-password">🐵</i>
                 </div>
                 <div class="announce">
                     <p>*A senha precisa ter no minimo 8 caracteres</p>
@@ -46,7 +46,7 @@
                 <div class="form-group">
                     <label for="passwordconfirm">Confirme a Senha</label>
                     <input type="password" id="passwordconfirm" name="passwordconfirm" autocomplete="on">
-                    <i id="togglePasswordConfirm" class="toggle-password">👁️</i>
+                    <i id="togglePasswordConfirm" class="toggle-password">🐵</i>
                 </div>
                 <div class="button">
                     <button type="button" onclick="Validate()">Cadastrar</button>

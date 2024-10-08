@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const type = password.type === 'password' ? 'text' : 'password';
         password.type = type;
 
-        this.textContent = type === 'password' ? '👁️' : '🙈';
+        this.textContent = type === 'password' ? '🐵' : '🙈';
     });
 
     togglePasswordConfirm.addEventListener('click', function () {
         const type = passwordConfirm.type === 'password' ? 'text' : 'password';
         passwordConfirm.type = type;
-        this.textContent = type === 'password' ? '👁️' : '🙈';
+        this.textContent = type === 'password' ? '🐵' : '🙈';
     });
 });
 

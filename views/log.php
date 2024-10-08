@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label for="password">Senha</label>
                     <input type="password" id="password" name="password" autocomplete="on">
-                    <i id="togglePassword" class="toggle-password">👁️</i>
+                    <i id="togglePassword" class="toggle-password">🐵</i>
                 </div>
                 <div class="button">
                     <button type="button" onclick="Validate()">Entrar</button>

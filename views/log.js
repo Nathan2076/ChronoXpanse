@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const type = password.type === 'password' ? 'text' : 'password';
         password.type = type;
 
-        this.textContent = type === 'password' ? '👁️' : '🙈';
+        this.textContent = type === 'password' ? '🐵' : '🙈';
     });
 });
 
