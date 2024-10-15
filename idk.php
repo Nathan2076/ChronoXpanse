@@ -22,7 +22,7 @@ function git($command) {
     global $gitadd, $level;
     
     if (count($command) > 1 && $command[1] == "clone") {
-        if (count($command) > 2 && $command[2] == "windows") {
+        if (count($command) > 2 && $command[2] == "windows" && $level == 1980) {
             echo("booting");
         }
         elseif (count($command) < 3) {
@@ -42,7 +42,7 @@ function git($command) {
                 for ($i = 3; $i < count($command); $i++) {
                     $commit .= $command[$i] . " ";
                 }
-                echo "[main f3b3714] " . format($commit) . "<br>&nbsp;2 arquivos alterados, 133 inserções(+), 7 exclusões(-)";
+                echo "[main f3b3714] " . format($commit) . "<br>&nbsp;1 arquivo alterado, 133 inserções(+), 7 exclusões(-)";
             }
             else {
                 echo "erro: a opção `m' requer um valor";
@@ -53,10 +53,10 @@ function git($command) {
         }
     }
     elseif (count($command) > 1 && $command[1] == "push" && $level == 1985) {
-        echo "Para https://github.com/User/ChronoXpanse.git<br>&nbsp;<span class='error'>! [rejeitado]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main -> main (obter primeiro)<br><span class='error'>erro: falha ao enviar algumas refs para 'https://github.com/User/ChronoXpanse.git'<br><span class='warning'>dica: Atualizações rejeitadas por estarem desatualizadas do repositório remoto.</span><br><span class='warning'>dica: Isso é normalmente causado por conflitos entre arquivos locais e remotos.</span><br><span class='warning'>dica: Use 'git pull' para importar os arquivos que faltam e digite</span><br><span class='warning'>dica: 'win' para entrar no Windows e editá-los.</span>";
+        echo "Para https://github.com/Nathan2076/ChronoXpanse.git<br>&nbsp;<span class='error1985'>! [rejeitado]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main -> main (obter primeiro)<br><span class='error1985'>erro: falha ao enviar algumas refs para 'https://github.com/Nathan2076/ChronoXpanse.git'<br><span class='warning1985'>dica: Atualizações rejeitadas por estarem desatualizadas do repositório remoto.</span><br><span class='warning1985'>dica: Isso é normalmente causado por conflitos entre arquivos locais e remotos.</span><br><span class='warning1985'>dica: Use 'git pull' para importar os arquivos que faltam e digite</span><br><span class='warning1985'>dica: 'win' para entrar no Windows e editá-los.</span>";
     }
     elseif (count($command) > 1 && $command[1] == "pull" && $level == 1985) {
-        echo "remoto: Enumerando objetos: 1, concluído.";
+        echo "remoto: Enumerando objetos: 1, concluído.<br>remoto: Contando objetos: 100% (1/1), concluído.<br>remoto: Compactando objetos: 100% (1/1), concluído.<br>remoto: Total 1 (delta 1), reutilizado 1 (delta 1), pacote reutilizado 0 (de 0)<br>Descompactando objetos: 100% (1/1), 972 bytes | 81.00 KiB/s, concluído.<br>De https://github.com/Nathan2076/ChronoXpanse<br>&nbsp;&nbsp;&nbsp;f84b07d..be820ce&nbsp;&nbsp;main&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> origin/main<br>Atualizando f84b07d..be820ce<br>&nbsp;WIN.EXE | 0<br>&nbsp;1 arquivo alterado, 0 inserções(+), 0 exclusões(-)<br>&nbsp;cria modo 100644 WIN.EXE";
     }
     elseif (count($command) < 2) {
         echo "uso: git &lt;comando&gt; [&lt;args&gt;]";
