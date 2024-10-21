@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <img alt="Logo" class="logo" src="views/logo.png">
+        <img alt="Logo" class="logo" src="logo.png">
         <div class="info">
             <a href=".../index.html">início:)</a>
         </div>
