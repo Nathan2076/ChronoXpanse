@@ -67,7 +67,7 @@ body {
     text-align: center;
 }
 
-.button button {
+.button input {
     border: none;
     outline: 1px solid #FFD100;
     background-color: black;
@@ -78,7 +78,7 @@ body {
     font-family: "IBM plex mono";
 }
 
-.button button:hover {
+.button input:hover {
     background-color: #302a0d;
 }
 

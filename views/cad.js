@@ -52,7 +52,7 @@ function Validate() {
 
     if (isValid) {
         alert("Cadastro finalizado com sucesso!");
-        window.location.href = '../index.html';
+        // window.location.href = '../index.html';
     }
 
 }

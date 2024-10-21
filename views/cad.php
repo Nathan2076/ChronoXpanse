@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" type="text/css" media="screen" href="views/cadlog.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="cadlog.css">
     <script src='cad.js'></script>
 </head>
 
@@ -19,7 +20,7 @@
     </header>
     <div id="main">
         <div class="signup">
-            <form class="form">
+            <form class="form" method="POST" action="../controllers/cadastrar.php">
                 <div class="maintitle">
                     <h1>Cadastro</h1>
                 </div>
@@ -49,7 +50,7 @@
                     <i id="togglePasswordConfirm" class="toggle-password">🐵</i>
                 </div>
                 <div class="button">
-                    <button type="button" onclick="Validate()">Cadastrar</button>
+                    <input type="submit" onclick="Validate()" value="Cadastrar">
                 </div>
             </form>
         </div>
