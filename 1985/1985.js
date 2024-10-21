@@ -1,56 +1,59 @@
 var file = null;
+var menu = document.getElementById("menu1985");
+var menu_menu = document.getElementById("menu-menu1985");
+var filebar = document.getElementById("filebar1985");
+var fileDiv = document.getElementById("file1985");
+var bar_title = document.getElementById("bar-title1985");
+var screenDiv = document.getElementById("screen1985");
 
-setTimeout(() => {
-  document.getElementById("boot").remove();
-}, 2000);
-
-document.getElementById("menu").addEventListener("mousedown", () => {
-  document.getElementById("menu").setAttribute("src", "assets/menu-selected.png");
-  document.getElementById("menu-menu").style.display = "block";
+menu.addEventListener("mousedown", () => {
+  menu.setAttribute("src", "assets/menu-selected.png");
+  menu_menu.style.display = "block";
 });
 
-document.getElementById("menu").addEventListener("mouseup", () => {
-  document.getElementById("menu").setAttribute("src", "assets/menu.png");
-  document.getElementById("menu-menu").style.display = "none";
+menu.addEventListener("mouseup", () => {
+  menu.setAttribute("src", "assets/menu.png");
+  menu_menu.style.display = "none";
 });
 
-document.getElementById("filebar").addEventListener("mouseup", () => {
-  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
-  document.getElementById("filebar").style.color = "black";
-  document.getElementById("file").style.display = "none";
+filebar.addEventListener("mouseup", () => {
+  filebar.style.backgroundColor = "var(--yellow)";
+  filebar.style.color = "black";
+  fileDiv.style.display = "none";
 });
 
-document.getElementById("close").addEventListener("mouseup", () => {
+document.getElementById("close1985").addEventListener("mouseup", () => {
   close();
 });
 
-document.getElementById("filebar").addEventListener("mousedown", () => {
-  document.getElementById("filebar").style.backgroundColor = "var(--blue)";
-  document.getElementById("filebar").style.color = "white";
-  document.getElementById("file").style.display = "block";
+filebar.addEventListener("mousedown", () => {
+  filebar.style.backgroundColor = "var(--blue)";
+  filebar.style.color = "white";
+  fileDiv.style.display = "block";
 });
 
-document.getElementById("filebar").addEventListener("mouseup", () => {
-  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
-  document.getElementById("filebar").style.color = "black";
-  document.getElementById("file").style.display = "none";
+filebar.addEventListener("mouseup", () => {
+  filebar.style.backgroundColor = "var(--yellow)";
+  filebar.style.color = "black";
+  fileDiv.style.display = "none";
 });
 
-document.getElementById("save").addEventListener("mouseup", () => {
-  if (document.getElementById("notepad"))
-    localStorage.setItem(file, document.getElementById("notepad").value);
-  document.getElementById("filebar").style.backgroundColor = "var(--yellow)";
-  document.getElementById("filebar").style.color = "black";
-  document.getElementById("file").style.display = "none";
+document.getElementById("save1985").addEventListener("mouseup", () => {
+  if (document.getElementById("notepad1985"))
+    localStorage.setItem(file, document.getElementById("notepad1985").value);
+  filebar.style.backgroundColor = "var(--yellow)";
+  filebar.style.color = "black";
+  fileDiv.style.display = "none";
 });
 
-var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.COM", "DISKCOMP.COM", "COMP.COM", "DATE.COM", "TIME.COM", "MODE.COM", "EDLIN.COM", "DEBUG.COM", "LINK.EXE", "BASIC.COM", "BASICA.COM", "ART.BAS", "SAMPLES.BAS" ];
+var files = [ "ABC.TXT", "AUTOEXEC.BAT", "CALC.EXE", "CALENDAR.EXE", "CARDFILE.EXE", "CLIPBRD.EXE", "CLOCK.EXE", "COMMAND.COM", "CONTROL.EXE", "COURA.FON", "COURB.FON", "DOTHIS.EXE", "HELVA.FON", "HELVB.FON", "HIFONTS.FON", "HPLASER.DRV", "LOFONTS.FON", "MODERN.FON", "MSDOS.EXE", "MSDOSD.EXE", "NOTEPAD.EXE", "PAINT.EXE", "PRACTICE.DOC", "README.DOC", "REVERSI.EXE", "ROMAN.FON", "SCRIPT.FON", "SPOOLER.EXE", "TERMINAL.EXE", "TEXT.TXT", "TMSRA.FON", "TMSRB.FON", "WIN.CNF", "WIN.COM", "WIN.INI", "WIN100.BIN", "WIN100.OVL", "WINOLDAP.GRB", "WINOLDAP.MOD", "WRITE.DAT", "WRITE.EXE" ];
     localStorage.setItem("files", JSON.stringify(files));
+    localStorage.setItem("INDEX.TXT", '<!DOCTYPE     >\n<html>\n  <head>\n    <title>        </title>\n  </    >\n  <body>\n    <h >Faca seu cadastro</ 1>\n    <form>\n      <      for="email">Email</label>\n      <input name="     " type="text">\n      <br>\n      <label for="     ">Senha</label>\n      <      name="senha" type="password">\n      <br>\n      <input type="submit">\n    </    >\n  </body>\n</html>')
     var eita = JSON.parse(localStorage.getItem("files"));
     eita.forEach(element => {
-      document.getElementById("files").insertAdjacentHTML("beforeend", `<div class='item'>${element}</div>`);
+      document.getElementById("files1985").insertAdjacentHTML("beforeend", `<div class='item1985'>${element}</div>`);
     });
-    const ok = document.getElementsByClassName("item");
+    const ok = document.getElementsByClassName("item1985");
     var bruh = Array.from(ok);
     var lastSelected, lastSelectedClass;
     bruh.forEach(element => {
@@ -59,7 +62,7 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
           if (lastSelected) lastSelected.setAttribute("class", lastSelectedClass);
           lastSelected = element;
           lastSelectedClass = element.getAttribute("class");
-          element.setAttribute("class", "selected " + lastSelectedClass);
+          element.setAttribute("class", "selected1985 " + lastSelectedClass);
         } else if (event.detail === 2) {
           if (element.innerHTML == "1980") {
             bruh.forEach(element => {
@@ -74,8 +77,8 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
     });
 
     function openFolder() {
-      document.getElementById("files").insertAdjacentHTML("beforeend", `<div class='item'>DESIGN.TXT</div><div class='item'>HISTORY.TXT</div>`);
-      const tmj = document.getElementsByClassName("item");
+      document.getElementById("files1985").insertAdjacentHTML("afterbegin", `<div class='item1985'>INDEX.TXT</div>`);
+      const tmj = document.getElementsByClassName("item1985");
       var kkkiai = Array.from(tmj);
       kkkiai.forEach(element => {
         element.onclick = event => {
@@ -83,7 +86,7 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
           if (lastSelected) lastSelected.setAttribute("class", lastSelectedClass);
           lastSelected = element;
           lastSelectedClass = element.getAttribute("class");
-          element.setAttribute("class", "selected " + lastSelectedClass);
+          element.setAttribute("class", "selected1985 " + lastSelectedClass);
         } else if (event.detail === 2) {
           file = element.innerHTML
           openFile();
@@ -93,39 +96,39 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
     }
   
     function openFile() {
-      document.getElementById("bar-title").innerHTML = "Notepad - " + file;
-      document.getElementById("view").innerHTML = "Edit";
-      document.getElementById("special").innerHTML = "Search";
-      document.getElementById("main").insertAdjacentHTML("afterbegin", "<textarea id='notepad' class='main' spellcheck='false' autofocus></textarea>");
+      bar_title.innerHTML = "Notepad - " + file;
+      document.getElementById("view1985").innerHTML = "Edit";
+      document.getElementById("special1985").innerHTML = "Search";
+      document.getElementById("main1985").insertAdjacentHTML("afterbegin", "<textarea id='notepad1985' class='main1985' spellcheck='false' autofocus></textarea>");
       console.log(localStorage.getItem(file));
-      document.getElementById("notepad").value = localStorage.getItem(file);
+      document.getElementById("notepad1985").value = localStorage.getItem(file);
     }
 
     function close() {
-      if (document.getElementById("bar-title").innerHTML.includes("Notepad")) {
-        document.getElementById("menu").setAttribute("src", "assets/menu.png");
-        document.getElementById("menu-menu").style.display = "none";
-        document.getElementById("notepad").remove();
-        document.getElementById("bar-title").innerHTML = "MS-DOS Executive";
-      } else if (document.getElementById("bar-title").innerHTML == "MS-DOS Executive") {
-        document.getElementById("screen").replaceChildren();
-        document.getElementById("screen").setAttribute("class", "terminal");
-        document.getElementById("screen").insertAdjacentHTML("beforeend", '<div id="input" class="input"><div id="text">A></div><form id="forms"><input type="text" id="command" class="cli"/></form></div><div id="response"></div><div id="cursor"></div>');
-        document.getElementById("command").focus();
+      if (bar_title.innerHTML.includes("Notepad")) {
+        menu.setAttribute("src", "assets/menu.png");
+        menu_menu.style.display = "none";
+        document.getElementById("notepad1985").remove();
+        bar_title.innerHTML = "MS-DOS Executive";
+      } else if (bar_title.innerHTML == "MS-DOS Executive") {
+        screenDiv.replaceChildren();
+        screenDiv.setAttribute("class", "terminal1985");
+        screenDiv.insertAdjacentHTML("beforeend", '<div id="input1985" class="input1985"><div id="text1985">A></div><form id="forms1985"><input type="text" id="command1985" class="cli1985"/></form></div><div id="response1985"></div><div id="cursor1985"></div>');
+        document.getElementById("command1985").focus();
         foo();
       }
     }
 
 
     function foo() {
-      let text = document.getElementById("text");
-      let form = document.getElementById("forms");
-      let input = document.getElementById("input");
-      let cursor = document.getElementById("cursor");
-      let responseDiv = document.getElementById("response");
+      let text = document.getElementById("text1985");
+      let form = document.getElementById("forms1985");
+      let input = document.getElementById("input1985");
+      let cursor = document.getElementById("cursor1985");
+      let responseDiv = document.getElementById("response1985");
       var position = 17.2;
       cursor.style.left = position + "px";
-      let commandInput = document.getElementById('command');
+      let commandInput = document.getElementById('command1985');
       var inputLengthPast = 0;
       var inputLengthNow = 0;
       commandInput.style.display = "block";
@@ -143,9 +146,9 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
         cursor.style.left = position + "px";
         inputLengthPast = inputLengthNow;
       });
-      document.getElementById('forms').addEventListener('submit', function(event) {
+      document.getElementById('forms1985').addEventListener('submit', function(event) {
         event.preventDefault();
-        let command = document.getElementById("command").value;
+        let command = document.getElementById("command1985").value;
       var xhr = new XMLHttpRequest();
       var response = "";
     xhr.open('POST', '../idk.php');
@@ -164,11 +167,11 @@ var files = [ "COMMAND.COM", "FORMAT.COM", "CHKDSK.COM", "SYS.COM", "DISKCOPY.CO
     form.removeAttribute("id");
     commandInput.removeAttribute("id");
     text.removeAttribute("id");
-    responseDiv.insertAdjacentHTML("afterend", '<div id="input" class="input"><div id="text"></div><form id="forms"><input type="text" id="command" class="cli" /></form></div>');
+    responseDiv.insertAdjacentHTML("afterend", '<div id="input1985" class="input1985"><div id="text1985"></div><form id="forms1985"><input type="text" id="command1985" class="cli1985" /></form></div>');
     responseDiv.removeAttribute("id");
-    input = document.getElementById("input");
-    input.insertAdjacentHTML("afterend", '<div id="response"></div>');
-    text = document.getElementById("text");
+    input = document.getElementById("input1985");
+    input.insertAdjacentHTML("afterend", '<div id="response1985"></div>');
+    text = document.getElementById("text1985");
     text.textContent = "A>";
     foo();
     };

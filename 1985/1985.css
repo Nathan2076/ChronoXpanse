@@ -17,33 +17,32 @@
     --brown: #AA5500;
 }
 
-#boot {
-    position: absolute;
-    z-index: 999;
-    width: 640px;
-    height: 350px;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-#screen {
-    width: 640px;
-    height: 350px;
+#screen1985 {
+    width: 100vw;
+    height: 100vh;
     font-family: Fixedsys, monospace;
     cursor: url("assets/cursor-win1.png"), auto;
     user-select: none;
     background-color: black;
 }
 
-#screen.terminal {
+#screen1985.terminal1985 {
     color: var(--gray);
     font-family: "IBM MDA";
     font-size: 13px;
+    overflow: hidden;
 }
 
-#bar {
+#bar1985 {
     display: flex;
 }
 
-#barra {
+#barra1985 {
     width: calc(100% - 14px);
     height: 14px;
     border: 1px solid black;
@@ -53,7 +52,7 @@
     justify-content: center;
 }
 
-.bar {
+.bar1985 {
     width: 13px;
     height: 16px;
 }
@@ -65,7 +64,7 @@
     background-color: black;
 } */
 
-#bar-title {
+#bar-title1985 {
     background-color: black;
     color: white;
     text-align: center;
@@ -73,23 +72,23 @@
     width: fit-content;
 }
 
-#baragain {
+#baragain1985 {
     background-color: var(--yellow);
     border-bottom: 1px solid black;
     display: flex;
     height: 14px;
 }
 
-.baritem {
+.baritem1985 {
     padding: 0 8px;
     line-height: 0.88em;
 }
 
-#menu-menu {
+#menu-menu1985 {
     height: 100px;
 }
 
-ul.menu {
+ul.menu1985 {
     display: none;
     background-color: var(--yellow);
     font-family: Fixedsys, monospace;
@@ -102,35 +101,35 @@ ul.menu {
     border-top: none !important;
 }
 
-ul.menu li {
-    cursor: url("assets/cursor-win1.png"), auto;
+ul.menu1985 li {
     height: 14px;
     line-height: 0.88em;
 }
 
 .ui-state-active {
+    cursor: url("assets/cursor-win1.png"), auto;
     background-color: var(--blue) !important;
     border: none !important;
 }
 
-ul.menu li div {
+ul.menu1985 li div {
     height: 14px;
     border: none;
     padding: 0 16px !important;
 }
 
-.main {
-    width: 100%;
+.main1985 {
+    width: calc(100% - 13px);
     height: calc(100% - 75px);
     padding: 0 5px 9px;
     background-color: white;
 }
 
-#directorybar {
+#directorybar1985 {
     display: flex;
 }
 
-.drive {
+.drive1985 {
     width: 54px;
     height: 15px;
     margin: 2px 3px;
@@ -140,33 +139,33 @@ ul.menu li div {
     display: flex;
 }
 
-.drive div {
+.drive1985 div {
     width: 8px;
     line-height: 0.85em;
 }
 
-.drive img {
+.drive1985 img {
     width: 46px;
 }
 
-.directory {
+.directory1985 {
     width: 71px;
     line-height: 1.4em;
     text-align: center;
 }
 
-.item {
+.item1985 {
     width: 106px;
     padding-left: 2px;
     height: 14px;
     line-height: 0.7em;
 }
 
-.folder {
+.folder1985 {
     font-weight: bold;
 }
 
-.selected {
+.selected1985 {
     background-color: black;
     color: white;
     height: 13px;
@@ -183,23 +182,21 @@ ul.menu li div {
     }
 }
 
-#notepad {
+#notepad1985 {
     resize: none;
     font-family: Fixedsys, monospace;
-    width: 624px;
     border: none;
     padding: 0 8px;
     margin: 0;
-    height: 284px;
     position: absolute;
     cursor: url("assets/caret.png"), text;
 }
 
-#notepad:focus {
+#notepad1985:focus {
     outline: none;
 }
 
-#bottom {
+#bottom1985 {
     width: 100%;
     height: 34px;
     border-top: 1px solid black;
@@ -209,15 +206,15 @@ ul.menu li div {
 }
 
 
-.input {
+.input1985 {
     display: flex;
 }
 
-#text {
+#text1985 {
     line-height: 1.16;
 }
 
-.cli {
+.cli1985 {
     width: calc(49vw - 2em);
     background: none;
     border: none;
@@ -226,7 +223,7 @@ ul.menu li div {
     font-family: "IBM MDA";
 }
 
-#command:focus {
+#command1985:focus {
     outline: none;
 }
 
@@ -240,7 +237,7 @@ ul.menu li div {
     }
 }
 
-#cursor {
+#cursor1985 {
     position: relative;
     z-index: 2;
     background-color: var(--gray);
@@ -249,10 +246,10 @@ ul.menu li div {
     animation: 250ms infinite cubic-bezier(1, 0, 0, 1) fade;
 }
 
-.error {
+.error1985 {
     color: var(--red);
 }
 
-.warning {
+.warning1985 {
     color: var(--brown);
 }
