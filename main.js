@@ -181,7 +181,7 @@ document.addEventListener("visibilitychange", () => {
         setTimeout(function(){
           let text = document.getElementById("text1980");
           text.innerHTML = "The IBM Personal Computer DOS";
-          text.insertAdjacentHTML("afterend", "<div>Version 1.00 (C)Copyright IBM Corp 1981<br><br>Desafio 1: use git para clonar o Windows<br><br></div>");
+          text.insertAdjacentHTML("afterend", "<div>Version 1.00 (C)Copyright IBM Corp 1981</div><br><div>Olá Jogador!</div><br><div>Você está prestes a começar sua jornada no nosso game, onde os desafios são resolvidos através de comandos. Para garantir que você saiba como navegar e interagir, aqui vão algumas orientações básicas:</div><br><div><nl><li>1. Git no Jogo: Durante sua aventura, você poderá usar comandos similares aos do Git, como clone, commit, push e pull. Eles foram adaptados para a dinâmica do jogo, simulando situações em que você precisará \"versionar\" suas ações, criando checkpoints e progredindo de maneira aos poucos.</li><br><li>2. Dicas:<ul><li>Use o comando \"git help\" para ver uma lista de comandos disponíveis;</li><li>Preste atenção nas dicas;</li><li>Antes de você pedir uma ­dica, você deverá tentar resolver o desafio pelo menos uma vez.</li></ul></li></nl></div><br><div>Boa sorte em sua jornada, e lembre-se: a chave para o sucesso está em usar o conhecimento dos comandos com sabedoria!</div><br><div>Desafio 1: use git para clonar o Windows</div><br>");
           text.removeAttribute("id");
           let yo = document.getElementById("input1980");
         yo.insertAdjacentHTML("afterbegin", "<div id='text1980'>A></div>");
