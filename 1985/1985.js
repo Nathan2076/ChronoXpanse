@@ -158,6 +158,10 @@ var files = [ "ABC.TXT", "AUTOEXEC.BAT", "CALC.EXE", "CALENDAR.EXE", "CARDFILE.E
     if (xhr.status === 200) {
         console.log('Dados enviados com sucesso!');
         response = xhr.responseText;
+        if (response == "booting") {
+          document.getElementById("body1985").replaceChildren();
+          document.getElementById("body1985").insertAdjacentHTML("beforeend", "<iframe src='../1995/1995.html' style='z-index: 99999999999; width: 100vw; height: 100vh; border: none;'>");
+        }
     } else {
         console.log('Ocorreu um erro ao enviar os dados.');
         }

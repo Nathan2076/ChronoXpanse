@@ -7,12 +7,18 @@ $level   = $_POST["level"];
 $gitadd  = false;
 
 switch ($command[0]) {
-    case "git":
+    case "GIT": case "git":
         git($command);
         break;
-    case "timeline": case "tl": case "linhadotempo": case "ldt": case "lt":
+    case "TIMELINE": case "timeline":
+    case "TL": case "tl":
+    case "LINHADOTEMPO": case "linhadotempo":
+    case "LDT": case "ldt":
+    case "LT": case "lt":
         printTimeline($level);
         break;
+    case "WIN": case "win":
+        win();
     default:
         echo "Comando ou nome de arquivo incorreto<br><br>";
         break;
@@ -73,6 +79,14 @@ function printTimeline($level) {
     } else {
         echo "----[X]-----[X]-----[ ]-----[ ]-----[ ]-----[ ]<br>";
         echo "&nbsp;&nbsp;&nbsp;1980&nbsp;&nbsp;&nbsp;&nbsp;1985&nbsp;&nbsp;&nbsp;&nbsp;1995&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000&nbsp;&nbsp;&nbsp;&nbsp;2010&nbsp;&nbsp;&nbsp;&nbsp;2024";
+    }
+}
+
+function win() {
+    global $level;
+
+    if ($level == 1985) {
+        echo "booting";
     }
 }
 
