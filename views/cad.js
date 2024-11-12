@@ -47,12 +47,7 @@ function Validate() {
         alert("A senha precisa ter no minimo 8 caracteres!");
         return false;
     }
-
-    var isValid = true
-
-    if (isValid) {
-        alert("Cadastro finalizado com sucesso!");
-        // window.location.href = '../index.html';
-    }
-
+    
+    alert("Cadastro finalizado com sucesso!");
+    // window.location.href = '../log.php';
 }
