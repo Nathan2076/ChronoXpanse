@@ -48,7 +48,7 @@ document.getElementById("save1985").addEventListener("mouseup", () => {
 
 var files = [ "ABC.TXT", "AUTOEXEC.BAT", "CALC.EXE", "CALENDAR.EXE", "CARDFILE.EXE", "CLIPBRD.EXE", "CLOCK.EXE", "COMMAND.COM", "CONTROL.EXE", "COURA.FON", "COURB.FON", "DOTHIS.EXE", "HELVA.FON", "HELVB.FON", "HIFONTS.FON", "HPLASER.DRV", "LOFONTS.FON", "MODERN.FON", "MSDOS.EXE", "MSDOSD.EXE", "NOTEPAD.EXE", "PAINT.EXE", "PRACTICE.DOC", "README.DOC", "REVERSI.EXE", "ROMAN.FON", "SCRIPT.FON", "SPOOLER.EXE", "TERMINAL.EXE", "TEXT.TXT", "TMSRA.FON", "TMSRB.FON", "WIN.CNF", "WIN.COM", "WIN.INI", "WIN100.BIN", "WIN100.OVL", "WINOLDAP.GRB", "WINOLDAP.MOD", "WRITE.DAT", "WRITE.EXE" ];
     localStorage.setItem("files", JSON.stringify(files));
-    localStorage.setItem("INDEX.TXT", '<!DOCTYPE     >\n<html>\n  <head>\n    <title>        </title>\n  </    >\n  <body>\n    <h >Faca seu cadastro</ 1>\n    <form>\n      <      for="email">Email</label>\n      <input name="     " type="text">\n      <br>\n      <label for="     ">Senha</label>\n      <      name="senha" type="password">\n      <br>\n      <input type="submit">\n    </    >\n  </body>\n</html>')
+    localStorage.setItem("INDEX.TXT", '<!DOCTYPE     >\n<html>\n  <head>\n    <title>        </title>\n  </    >\n  <body>\n    <h >Faca seu cadastro</ 1>\n    <form>\n      <      for="email">Email: </label>\n      <input name="     " type="text">\n      <br>\n      <label for="     ">Senha: </label>\n      <      name="senha" type="password">\n      <br>\n      <input type="submit">\n    </    >\n  </body>\n</html>')
     var eita = JSON.parse(localStorage.getItem("files"));
     eita.forEach(element => {
       document.getElementById("files1985").insertAdjacentHTML("beforeend", `<div class='item1985'>${element}</div>`);
@@ -64,7 +64,7 @@ var files = [ "ABC.TXT", "AUTOEXEC.BAT", "CALC.EXE", "CALENDAR.EXE", "CARDFILE.E
           lastSelectedClass = element.getAttribute("class");
           element.setAttribute("class", "selected1985 " + lastSelectedClass);
         } else if (event.detail === 2) {
-          if (element.innerHTML == "1980") {
+          if (element.innerHTML == "CADASTRO") {
             bruh.forEach(element => {
               element.remove();
             });

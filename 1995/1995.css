@@ -1,6 +1,6 @@
 @font-face {
     font-family: W95FA;
-    src: url(assets/fonts/W95FA/W95FA.otf);
+    src: url(assets/fonts/W95FA/w95fa.woff2);
 }
 
 @font-face {
@@ -21,16 +21,27 @@
     background-color: var(--cyan);
     font-family: W95FA;
     user-select: none;
+    cursor: url("assets/cursor.png"), auto;
 }
 
 #boot {
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 9999;
+    position: absolute;
 }
 
 main {
     height: calc(100vh - 28px);
+}
+
+#shortcuts {
+    display: flex;
+}
+
+#item-row {
+    margin-left: 7px;
+    margin-right: 21px;
 }
 
 .item {
@@ -55,8 +66,65 @@ main {
     border: 1px dotted yellow;
 }
 
+.ui-dialog {
+    background-color: var(--silver) !important;
+    padding: 3px !important;
+    border-top: 1px solid var(--silver) !important;
+    border-left: 1px solid var(--silver) !important;
+    border-right: 1px solid black !important;
+    border-bottom: 1px solid black !important;
+    box-shadow: inset -1px -1px var(--gray), inset 1px 1px white !important;
+    border-radius: 0 !important;
+    font-family: W95FA !important;
+}
+
+.ui-dialog-titlebar {
+    background-color: var(--blue) !important;
+    border-radius: 0 !important;
+    color: white !important;
+    height: 14px !important;
+    cursor: auto !important;
+    padding: 2px !important;
+}
+
+.ui-widget-header {
+    border: none !important;
+}
+
+.ui-dialog-title {
+    font-weight: 900 !important;
+    font-size: 14px !important;
+    height: 18px !important;
+    line-height: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    width: calc(100% - 50px) !important;
+}
+
+.ui-dialog-content {
+    overflow: unset !important;
+}
+
+.ui-dialog[aria-describedby="netscape"] {
+    width: 473px !important;
+    height: 314px !important;
+}
+
+#site {
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: inset -1px -1px var(--silver), inset 1px 1px black;
+}
+
 #taskbar {
+    display: flex;
     height: 24px;
+    justify-content: space-between;
     padding-top: 3px;
     padding-left: 2px;
     width: calc(100% - 2px);
@@ -65,7 +133,11 @@ main {
     box-shadow: inset 0 1px white;
     background-color: var(--silver);
     position: absolute;
-    z-index: -1;
+    z-index: 999;
+}
+
+#programs {
+    display: flex;
 }
 
 #start {
@@ -76,4 +148,33 @@ main {
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     box-shadow: inset -1px -1px var(--gray);
+}
+
+.program {
+    width: 158px;
+    height: 20px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#notification-area {
+    width: 79px;
+    height: 20px;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#volume {
+    padding: 2px;
+}
+
+#clock {
+    font-size: 12px;
+    padding-right: 11px;
+    line-height: 22px;
+    float: right;
 }
