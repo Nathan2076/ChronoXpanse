@@ -127,7 +127,7 @@ document.addEventListener("visibilitychange", () => {
           let command = document.getElementById("command1980").value;
         var xhr = new XMLHttpRequest();
         var response = "";
-      xhr.open('POST', 'idk.php');
+      xhr.open('POST', 'commands.php');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send('command=' + command + "&level=1980");
       xhr.onload = function() {

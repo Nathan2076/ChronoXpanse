@@ -16,7 +16,7 @@
   </script>
 </head>
 <body id="body">
-    <!-- <img src="boot.png" id="boot"> -->
+    <!-- <img src="assets/boot.png" id="boot"> -->
     <main id="main">
       <div id="shortcuts">
         <div id="item-row">
@@ -59,16 +59,76 @@
             <p>Netscape Navigator</p>
           </div>
           <div class="item">
-            <img src="assets/folder.png">
-            <p>Cadastro</p>
+            <img src="assets/notepad.png">
+            <p>index.html</p>
           </div>
         </div>
       </div>
-      <div class="window" title="Netscape - [Cadastro]" id="netscape">
-        <iframe id="site" srcdoc="<!DOCTYPE html><html><head><title>Cadastro</title></head><body><h1>Faca seu cadastro</h1><form><label for='email'>Email: </label><input name='email' type='text'><br><label for='senha'>Senha: </label><input name='senha' type='password'><br><input type='submit'></form></body></html>"></iframe>
+      <div class="window" title="Netscape - [Login]" id="netscape">
+        <div class="menu">
+          <div class="menu-item"><u>F</u>ile</div>
+          <div class="menu-item"><u>E</u>dit</div>
+          <div class="menu-item"><u>V</u>iew</div>
+          <div class="menu-item"><u>G</u>o</div>
+          <div class="menu-item"><u>B</u>ookmarks</div>
+          <div class="menu-item"><u>O</u>ptions</div>
+          <div class="menu-item"><u>D</u>irectory</div>
+          <div class="menu-item"><u>W</u>indow</div>
+          <div class="menu-item"><u>H</u>elp</div>
+        </div>
+        <br>
+        <hr>
+        <div id="buttons">
+          <img src="assets/buttons-1.png" width="147px" style="margin-right: 16px;">
+          <img src="assets/button-reload.png" width="49px" id="reload" draggable="false">
+          <img src="assets/buttons-2.png" width="196px" style="margin-right: 16px;">
+          <img src="assets/button-stop.png" width="49px">
+        </div>
+        <hr>
+        <div style="display: flex;">
+          <div style="width: calc(99% - 62px); padding: 3px 4px 5px 8px;">
+            <div id="location-bar">
+              <label for="location" style="padding: 0 3px;">Location: </label>
+              <div id="location">
+                <input name="location" type="text" value="file:///C:/WINDOWS/DESKTOP/index.html" style="width: calc(100% - 16px);">
+                <img src="assets/expand.png" width="16px">
+              </div>
+            </div>
+            <div id="location-buttons">
+              <div class="location-button">What's New!</div>
+              <div class="location-button" style="margin-right: 2px;">What's Cool!</div>
+              <div class="location-button">Handbook</div>
+              <div class="location-button" style="margin-right: 2px;">Net Search</div>
+              <div class="location-button">Net Directory</div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/netscape-logo.png" width="50px">
+          </div>
+        </div>
+        <iframe id="site" srcdoc='<!DOCTYPE html><html><head><title>Login</title><link rel="stylesheet" href="iframe.css" /></head><body><h1>Faça seu login</h1><form id="form"><label for="email">Email: </label><input name="email" id="email" type="text"><br><label for="senha">Senha: </label><input name="senha" id="senha" type="password"><br><input type="submit"></form><script>document.getElementById("form").addEventListener("submit", function(e) { e.preventDefault(); });</script></body></html>'></iframe>
+        <div id="status-bar">
+          <div style="margin: 0 9px;">
+            <img src="assets/insecure.png" width="34px">
+          </div>
+          <div id="status" class="text-space" style="width: calc(100% - 214px); font-size: 12px; margin-left: 3px;">Document: Done</div>
+          <div class="text-space" style="width: 92px; margin: 0 2px;"></div>
+          <div style="margin: 0 11px;">
+            <img src="assets/email.png" width="24px">
+          </div>
+          <div style="margin-left: 3px;">
+            <img src="assets/resizable.png" width="15px">
+          </div>
+        </div>
       </div>
-      <div class="window" title="Cadastro" id="cadastro">
-        <p>Folder</p>
+      <div class="window" title="index.html" id="login">
+        <div class="menu">
+          <div class="menu-item"><u>F</u>ile</div>
+          <div class="menu-item"><u>E</u>dit</div>
+          <div class="menu-item"><u>S</u>earch</div>
+          <div class="menu-item"><u>H</u>elp</div>
+        </div>
+        <textarea id='notepad' spellcheck='false' autofocus></textarea>
       </div>
     </main>
     <div id="taskbar">
@@ -77,10 +137,10 @@
           <img src="assets/start.png" width="52px">
         </div>
         <div class="program">
-          <img src="assets/netscape-16.png" width="16px">&nbsp;Netscape - [Cadastro]
+          <img src="assets/netscape-16.png" width="16px">&nbsp;Netscape - [Login]
         </div>
         <div class="program">
-          <img src="assets/folder-16.png" width="16px">&nbsp;Cadastro
+          <img src="assets/notepad-16.png" width="13px">&nbsp;index.html - Notepad
         </div>
       </div>
         <div id="notification-area">

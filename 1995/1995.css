@@ -83,7 +83,7 @@ main {
     border-radius: 0 !important;
     color: white !important;
     height: 14px !important;
-    cursor: auto !important;
+    cursor: url("assets/cursor.png"), auto !important;
     padding: 2px !important;
 }
 
@@ -104,21 +104,124 @@ main {
 
 .ui-dialog-content {
     overflow: unset !important;
+    padding: 0 !important;
+}
+
+.ui-widget-content {
+    color: black !important;
+    height: 100% !important;
 }
 
 .ui-dialog[aria-describedby="netscape"] {
-    width: 473px !important;
-    height: 314px !important;
+    width: 600px !important;
+    height: 375px !important;
+}
+
+.ui-dialog[aria-describedby="login"] {
+    width: 400px !important;
+    height: 500px !important;
+}
+
+.menu {
+    display: flex;
+    float: left;
+    padding: 1px;
+    font-size: 12px;
+    width: 100%;
+}
+
+.menu-item {
+    padding: 3px 6px 0;
+}
+
+hr {
+    margin: 3px;
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid white;
+}
+
+#buttons {
+    padding: 0 6px;
+    height: 41px;
+}
+
+#location-bar {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+#location {
+    width: 100%;
+    padding: 0 1px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: inset -1px -1px var(--silver), inset 1px 1px black;
+}
+
+#location input {
+    font-size: 12px;
+    border: none;
+    font-family: W95FA;
+    height: 10px;
+    padding: 3px 2px 4px;
+}
+
+#location input:focus {
+    outline: none;
+}
+
+#location-buttons {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 0;
+}
+
+.location-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 73px;
+    height: 19px;
+    margin-right: 1px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: inset -1px -1px var(--gray);
 }
 
 #site {
-    width: 100%;
+    width: 99%;
+    height: calc(100% - 178px);
     background-color: white;
     border-top: 1px solid var(--gray);
     border-left: 1px solid var(--gray);
     border-right: 1px solid white;
     border-bottom: 1px solid white;
     box-shadow: inset -1px -1px var(--silver), inset 1px 1px black;
+    font-family: R9512;
+}
+
+#status-bar {
+    display: flex;
+    align-items: center;
+    padding: 2px 0 3px;
+    width: 99%;
+}
+
+.text-space {
+    height: 13px;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 #taskbar {
@@ -134,15 +237,38 @@ main {
     background-color: var(--silver);
     position: absolute;
     z-index: 999;
+    overflow: hidden;
 }
 
 #programs {
     display: flex;
 }
 
+#notepad {
+    resize: none;
+    font-family: W95FA;
+    font-weight: 900;
+    font-size: 12px;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: inset -1px -1px var(--silver), inset 1px 1px black;
+    padding: 5px 3px;
+    margin: 0;
+    width: 98%;
+    height: calc(100% - 53px);
+    cursor: url("assets/caret.png"), text;
+}
+
+#notepad:focus {
+    outline: none;
+}
+
 #start {
     width: 54px;
     height: 20px;
+    margin-right: 1px;
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid black;
@@ -151,8 +277,13 @@ main {
 }
 
 .program {
-    width: 158px;
-    height: 20px;
+    display: flex;
+    align-items: center;
+    width: 152px;
+    height: 16px;
+    font-size: 12px;
+    padding: 2px 3px;
+    margin-left: 3px;
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid black;

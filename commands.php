@@ -19,6 +19,7 @@ switch ($command[0]) {
         break;
     case "WIN": case "win":
         win();
+        break;
     default:
         echo "Comando ou nome de arquivo incorreto<br><br>";
         break;
