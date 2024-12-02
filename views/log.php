@@ -40,6 +40,11 @@
                 <div class="button">
                     <input type="submit" onclick="Validate()" value="Entrar">
                 </div>
+
+                <br>
+                <div class="subtitle">
+                    <p>Ainda não possui cadastro? crie um<a href="log.php"> aqui</a></p>
+                </div>
             </form>
         </div>
     </div>
