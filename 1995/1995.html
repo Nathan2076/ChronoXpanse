@@ -5,13 +5,149 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>1995</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <Meta http-equiv=”refresh” content= "5" URL='teste'/>
   <link rel="stylesheet" type="text/css" media="screen" href="1995.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script>
+    $(function() {
+        $(".window").dialog();
+    });
+  </script>
 </head>
-<body>
-    <div>
-        <p>Starting Windows 95...</p>
+<body id="body">
+    <!-- <img src="assets/boot.png" id="boot"> -->
+    <main id="main">
+      <div id="shortcuts">
+        <div id="item-row">
+          <div class="item">
+            <img src="assets/computer.png">
+            <p>My Computer</p>
+          </div>
+          <div class="item">
+            <img src="assets/network.png">
+            <p>Network Neighborhood</p>
+          </div>
+          <div class="item">
+            <img src="assets/inbox.png">
+            <p>Inbox</p>
+          </div>
+          <div class="item">
+            <img src="assets/recycle.png">
+            <p>Recycle Bin</p>
+          </div>
+          <div class="item">
+            <img src="assets/internet.png">
+            <p>The Internet</p>
+          </div>
+          <div class="item">
+            <img src="assets/msn.png">
+            <p>The Microsoft Network</p>
+          </div>
+        </div>
+        <div>
+          <div class="item">
+            <img src="assets/briefcase.png">
+            <p>My Briefcase</p>
+          </div>
+          <div class="item">
+            <img src="assets/folder.png">
+            <p>Online Services</p>
+          </div>
+          <div class="item">
+            <img src="assets/netscape.png">
+            <p>Netscape Navigator</p>
+          </div>
+          <div class="item">
+            <img src="assets/notepad.png">
+            <p>index.html</p>
+          </div>
+        </div>
+      </div>
+      <div class="window" title="Netscape - [Login]" id="netscape">
+        <div class="menu">
+          <div class="menu-item"><u>F</u>ile</div>
+          <div class="menu-item"><u>E</u>dit</div>
+          <div class="menu-item"><u>V</u>iew</div>
+          <div class="menu-item"><u>G</u>o</div>
+          <div class="menu-item"><u>B</u>ookmarks</div>
+          <div class="menu-item"><u>O</u>ptions</div>
+          <div class="menu-item"><u>D</u>irectory</div>
+          <div class="menu-item"><u>W</u>indow</div>
+          <div class="menu-item"><u>H</u>elp</div>
+        </div>
+        <br>
+        <hr>
+        <div id="buttons">
+          <img src="assets/buttons-1.png" width="147px" style="margin-right: 16px;">
+          <img src="assets/button-reload.png" width="49px" id="reload" draggable="false">
+          <img src="assets/buttons-2.png" width="196px" style="margin-right: 16px;">
+          <img src="assets/button-stop.png" width="49px">
+        </div>
+        <hr>
+        <div style="display: flex;">
+          <div style="width: calc(99% - 62px); padding: 3px 4px 5px 8px;">
+            <div id="location-bar">
+              <label for="location" style="padding: 0 3px;">Location: </label>
+              <div id="location">
+                <input name="location" type="text" value="file:///C:/WINDOWS/DESKTOP/index.html" style="width: calc(100% - 16px);">
+                <img src="assets/expand.png" width="16px">
+              </div>
+            </div>
+            <div id="location-buttons">
+              <div class="location-button">What's New!</div>
+              <div class="location-button" style="margin-right: 2px;">What's Cool!</div>
+              <div class="location-button">Handbook</div>
+              <div class="location-button" style="margin-right: 2px;">Net Search</div>
+              <div class="location-button">Net Directory</div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/netscape-logo.png" width="50px">
+          </div>
+        </div>
+        <iframe id="site" srcdoc='<!DOCTYPE html><html><head><title>Login</title><link rel="stylesheet" href="iframe.css" /></head><body><h1>Faça seu login</h1><form id="form"><label for="email">Email: </label><input name="email" id="email" type="text"><br><label for="senha">Senha: </label><input name="senha" id="senha" type="password"><br><input type="submit"></form><script>document.getElementById("form").addEventListener("submit", function(e) { e.preventDefault(); });</script></body></html>'></iframe>
+        <div id="status-bar">
+          <div style="margin: 0 9px;">
+            <img src="assets/insecure.png" width="34px">
+          </div>
+          <div id="status" class="text-space" style="width: calc(100% - 214px); font-size: 12px; margin-left: 3px;">Document: Done</div>
+          <div class="text-space" style="width: 92px; margin: 0 2px;"></div>
+          <div style="margin: 0 11px;">
+            <img src="assets/email.png" width="24px">
+          </div>
+          <div style="margin-left: 3px;">
+            <img src="assets/resizable.png" width="15px">
+          </div>
+        </div>
+      </div>
+      <div class="window" title="index.html" id="login">
+        <div class="menu">
+          <div class="menu-item"><u>F</u>ile</div>
+          <div class="menu-item"><u>E</u>dit</div>
+          <div class="menu-item"><u>S</u>earch</div>
+          <div class="menu-item"><u>H</u>elp</div>
+        </div>
+        <textarea id='notepad' spellcheck='false' autofocus></textarea>
+      </div>
+    </main>
+    <div id="taskbar">
+      <div id="programs">
+        <div id="start">
+          <img src="assets/start.png" width="52px">
+        </div>
+        <div class="program">
+          <img src="assets/netscape-16.png" width="16px">&nbsp;Netscape - [Login]
+        </div>
+        <div class="program">
+          <img src="assets/notepad-16.png" width="13px">&nbsp;index.html - Notepad
+        </div>
+      </div>
+        <div id="notification-area">
+          <img src="assets/speaker.png" width="16px" id="volume">
+        <span id="clock"></span>
+      </div>
     </div>
-    <div id="cursor"></div>
+    <script src="1995.js"></script>
 </body>
 </html>

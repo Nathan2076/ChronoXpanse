@@ -36,6 +36,6 @@ function Validate(){
 
     if (isValid) {
         alert("Login finalizado com sucesso!");
-        window.location.href = '../index.html';
+        window.location.href = '../';
     }
 }

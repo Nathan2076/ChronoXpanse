@@ -15,7 +15,7 @@
     <header>
         <img alt="Logo" class="logo" src="logo.png">
         <div class="info">
-            <a href="../index.html">início:)</a>
+            <a href="../">início:)</a>
         </div>
     </header>
     <div id="main">
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="password">Senha</label>
                     <input type="password" id="password" name="password" autocomplete="on">
-                    <i id="togglePassword" class="toggle-password">🐵</i>
+                    <p id="togglePassword" class="toggle-password">🐵</p>
                 </div>
                 <div class="announce">
                     <p>*A senha precisa ter no minimo 8 caracteres</p>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label for="passwordconfirm">Confirme a Senha</label>
                     <input type="password" id="passwordconfirm" name="passwordconfirm" autocomplete="on">
-                    <i id="togglePasswordConfirm" class="toggle-password">🐵</i>
+                    <p id="togglePasswordConfirm" class="toggle-password">🐵</p>
                 </div>
                 <div class="button">
                     <input type="submit" onclick="Validate()" value="Cadastrar">

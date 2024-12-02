@@ -48,7 +48,7 @@ document.getElementById("save1985").addEventListener("mouseup", () => {
 
 var files = [ "ABC.TXT", "AUTOEXEC.BAT", "CALC.EXE", "CALENDAR.EXE", "CARDFILE.EXE", "CLIPBRD.EXE", "CLOCK.EXE", "COMMAND.COM", "CONTROL.EXE", "COURA.FON", "COURB.FON", "DOTHIS.EXE", "HELVA.FON", "HELVB.FON", "HIFONTS.FON", "HPLASER.DRV", "LOFONTS.FON", "MODERN.FON", "MSDOS.EXE", "MSDOSD.EXE", "NOTEPAD.EXE", "PAINT.EXE", "PRACTICE.DOC", "README.DOC", "REVERSI.EXE", "ROMAN.FON", "SCRIPT.FON", "SPOOLER.EXE", "TERMINAL.EXE", "TEXT.TXT", "TMSRA.FON", "TMSRB.FON", "WIN.CNF", "WIN.COM", "WIN.INI", "WIN100.BIN", "WIN100.OVL", "WINOLDAP.GRB", "WINOLDAP.MOD", "WRITE.DAT", "WRITE.EXE" ];
     localStorage.setItem("files", JSON.stringify(files));
-    localStorage.setItem("INDEX.TXT", '<!DOCTYPE     >\n<html>\n  <head>\n    <title>        </title>\n  </    >\n  <body>\n    <h >Faca seu cadastro</ 1>\n    <form>\n      <      for="email">Email</label>\n      <input name="     " type="text">\n      <br>\n      <label for="     ">Senha</label>\n      <      name="senha" type="password">\n      <br>\n      <input type="submit">\n    </    >\n  </body>\n</html>')
+    localStorage.setItem("INDEX.TXT", '<!DOCTYPE     >\n<html>\n  <head>\n    <title>     </title>\n  </    >\n  <body>\n    <h >Faca seu login</ 1>\n    <form id="form">\n      <      for="email">Email: </label>\n      <input name="     " id="     " type="text">\n      <br>\n      <label for="     ">Senha: </label>\n      <      name="senha" id  senha  type="password">\n      <br>\n      <input type="submit">\n    </    >\n  </body>\n</html>')
     var eita = JSON.parse(localStorage.getItem("files"));
     eita.forEach(element => {
       document.getElementById("files1985").insertAdjacentHTML("beforeend", `<div class='item1985'>${element}</div>`);
@@ -64,7 +64,7 @@ var files = [ "ABC.TXT", "AUTOEXEC.BAT", "CALC.EXE", "CALENDAR.EXE", "CARDFILE.E
           lastSelectedClass = element.getAttribute("class");
           element.setAttribute("class", "selected1985 " + lastSelectedClass);
         } else if (event.detail === 2) {
-          if (element.innerHTML == "1980") {
+          if (element.innerHTML == "LOGIN") {
             bruh.forEach(element => {
               element.remove();
             });
@@ -151,13 +151,17 @@ var files = [ "ABC.TXT", "AUTOEXEC.BAT", "CALC.EXE", "CALENDAR.EXE", "CARDFILE.E
         let command = document.getElementById("command1985").value;
       var xhr = new XMLHttpRequest();
       var response = "";
-    xhr.open('POST', '../idk.php');
+    xhr.open('POST', '../commands.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.send("command=" + command + "&level=1985");
     xhr.onload = function() {
     if (xhr.status === 200) {
         console.log('Dados enviados com sucesso!');
         response = xhr.responseText;
+        if (response == "booting") {
+          document.getElementById("body1985").replaceChildren();
+          document.getElementById("body1985").insertAdjacentHTML("beforeend", "<iframe src='../1995/1995.html' style='z-index: 99999999999; width: 100vw; height: 100vh; border: none;'>");
+        }
     } else {
         console.log('Ocorreu um erro ao enviar os dados.');
         }

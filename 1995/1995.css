@@ -1,39 +1,311 @@
-@font-face{
-    font-family: Pxplus ;
-    src: url("assets/fonts/PxPlus_IBM_MDA.ttf");
+@font-face {
+    font-family: W95FA;
+    src: url(assets/fonts/W95FA/w95fa.woff2);
 }
 
-body {
-    background-color: black;
+@font-face {
+    font-family: R9512;
+    src: url(assets/fonts/R9512.ttf);
 }
 
-p {
-    font-family: Pxplus ;
-    font-size: 30px;
-    color: #A6A6A6;
-
-    margin-left: 5px;
+:root {
+    --cyan: #57A8A8;
+    --silver: #C0C7C8;
+    --gray: #87888F;
+    --blue: #0000A8;
 }
 
-@keyframes fade {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
+#body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cyan);
+    font-family: W95FA;
+    user-select: none;
+    cursor: url("assets/cursor.png"), auto;
 }
 
-#cursor {
-    background-color: #a8a8a8;
-    position: relative;
-    margin-left: 5px;
-    z-index: 2;
-    
-    
-    width: 15px;
-    height: 5px;
+#boot {
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    position: absolute;
+}
 
-    animation: 750ms infinite cubic-bezier(1, 0, 0, 1) fade;
+main {
+    height: calc(100vh - 28px);
+}
+
+#shortcuts {
+    display: flex;
+}
+
+#item-row {
+    margin-left: 7px;
+    margin-right: 21px;
+}
+
+.item {
+    width: 64px;
+    padding-top: 2px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+.item img {
+    width: 32px;
+}
+
+.item p {
+    margin: 0;
+}
+
+.selected p {
+    background-color: var(--blue);
+    border: 1px dotted yellow;
+}
+
+.ui-dialog {
+    background-color: var(--silver) !important;
+    padding: 3px !important;
+    border-top: 1px solid var(--silver) !important;
+    border-left: 1px solid var(--silver) !important;
+    border-right: 1px solid black !important;
+    border-bottom: 1px solid black !important;
+    box-shadow: inset -1px -1px var(--gray), inset 1px 1px white !important;
+    border-radius: 0 !important;
+    font-family: W95FA !important;
+}
+
+.ui-dialog-titlebar {
+    background-color: var(--blue) !important;
+    border-radius: 0 !important;
+    color: white !important;
+    height: 14px !important;
+    cursor: url("assets/cursor.png"), auto !important;
+    padding: 2px !important;
+}
+
+.ui-widget-header {
+    border: none !important;
+}
+
+.ui-dialog-title {
+    font-weight: 900 !important;
+    font-size: 14px !important;
+    height: 18px !important;
+    line-height: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    width: calc(100% - 50px) !important;
+}
+
+.ui-dialog-content {
+    overflow: unset !important;
+    padding: 0 !important;
+}
+
+.ui-widget-content {
+    color: black !important;
+    height: 100% !important;
+}
+
+.ui-dialog[aria-describedby="netscape"] {
+    width: 600px !important;
+    height: 375px !important;
+}
+
+.ui-dialog[aria-describedby="login"] {
+    width: 400px !important;
+    height: 500px !important;
+}
+
+.menu {
+    display: flex;
+    float: left;
+    padding: 1px;
+    font-size: 12px;
+    width: 100%;
+}
+
+.menu-item {
+    padding: 3px 6px 0;
+}
+
+hr {
+    margin: 3px;
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid white;
+}
+
+#buttons {
+    padding: 0 6px;
+    height: 41px;
+}
+
+#location-bar {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+#location {
+    width: 100%;
+    padding: 0 1px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: inset -1px -1px var(--silver), inset 1px 1px black;
+}
+
+#location input {
+    font-size: 12px;
+    border: none;
+    font-family: W95FA;
+    height: 10px;
+    padding: 3px 2px 4px;
+}
+
+#location input:focus {
+    outline: none;
+}
+
+#location-buttons {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 0;
+}
+
+.location-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 73px;
+    height: 19px;
+    margin-right: 1px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: inset -1px -1px var(--gray);
+}
+
+#site {
+    width: 99%;
+    height: calc(100% - 178px);
+    background-color: white;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: inset -1px -1px var(--silver), inset 1px 1px black;
+    font-family: R9512;
+}
+
+#status-bar {
+    display: flex;
+    align-items: center;
+    padding: 2px 0 3px;
+    width: 99%;
+}
+
+.text-space {
+    height: 13px;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#taskbar {
+    display: flex;
+    height: 24px;
+    justify-content: space-between;
+    padding-top: 3px;
+    padding-left: 2px;
+    width: calc(100% - 2px);
+    bottom: 0;
+    border-top: solid 1px var(--silver);
+    box-shadow: inset 0 1px white;
+    background-color: var(--silver);
+    position: absolute;
+    z-index: 999;
+    overflow: hidden;
+}
+
+#programs {
+    display: flex;
+}
+
+#notepad {
+    resize: none;
+    font-family: W95FA;
+    font-weight: 900;
+    font-size: 12px;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: inset -1px -1px var(--silver), inset 1px 1px black;
+    padding: 5px 3px;
+    margin: 0;
+    width: 98%;
+    height: calc(100% - 53px);
+    cursor: url("assets/caret.png"), text;
+}
+
+#notepad:focus {
+    outline: none;
+}
+
+#start {
+    width: 54px;
+    height: 20px;
+    margin-right: 1px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: inset -1px -1px var(--gray);
+}
+
+.program {
+    display: flex;
+    align-items: center;
+    width: 152px;
+    height: 16px;
+    font-size: 12px;
+    padding: 2px 3px;
+    margin-left: 3px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#notification-area {
+    width: 79px;
+    height: 20px;
+    border-top: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#volume {
+    padding: 2px;
+}
+
+#clock {
+    font-size: 12px;
+    padding-right: 11px;
+    line-height: 22px;
+    float: right;
 }
